@@ -1,0 +1,9 @@
+# Vitis ignores
+metadata/
+RemoteSystemsTempFiles/
+Debug/
+_ide/
+export/
+
+.cproject
+.project
