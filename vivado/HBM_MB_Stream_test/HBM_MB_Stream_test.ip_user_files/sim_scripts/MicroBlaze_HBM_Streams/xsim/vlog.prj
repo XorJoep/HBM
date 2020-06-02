@@ -1,0 +1,26 @@
+sv xil_defaultlib --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_hbm_0_0/hdl/rtl" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/98cb/verif/model" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/dc6c/hdl/src/verilog" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/ec67/hdl" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/4fba" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_hbm_0_0/hdl/rtl/hbm_v1_0_6.sv" \
+
+sv hbm_v1_0_6 --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_hbm_0_0/hdl/rtl" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/98cb/verif/model" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/dc6c/hdl/src/verilog" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/ec67/hdl" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/4fba" \
+"../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/98cb/hdl/hbm_v1_0_vl_rfs.sv" \
+
+sv xil_defaultlib --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_hbm_0_0/hdl/rtl" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/98cb/verif/model" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/dc6c/hdl/src/verilog" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/ec67/hdl" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/4fba" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_hbm_0_0/verif/model/hbm_model.sv" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_hbm_0_0/sim/MicroBlaze_HBM_Streams_hbm_0_0.sv" \
+
+verilog xil_defaultlib --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_hbm_0_0/hdl/rtl" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/98cb/verif/model" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/dc6c/hdl/src/verilog" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/ec67/hdl" --include "../../../../HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ipshared/4fba" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_axi_traffic_gen_0_0/sim/MicroBlaze_HBM_Streams_axi_traffic_gen_0_0.v" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_xbar_2/sim/MicroBlaze_HBM_Streams_xbar_2.v" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_lmb_bram_1/sim/MicroBlaze_HBM_Streams_lmb_bram_1.v" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_clk_wiz_0_0/MicroBlaze_HBM_Streams_clk_wiz_0_0_clk_wiz.v" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_clk_wiz_0_0/MicroBlaze_HBM_Streams_clk_wiz_0_0.v" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_resetn_inv_0_0/sim/MicroBlaze_HBM_Streams_resetn_inv_0_0.v" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_xbar_4/sim/MicroBlaze_HBM_Streams_xbar_4.v" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_auto_pc_0/sim/MicroBlaze_HBM_Streams_auto_pc_0.v" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_auto_us_0/sim/MicroBlaze_HBM_Streams_auto_us_0.v" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_auto_us_1/sim/MicroBlaze_HBM_Streams_auto_us_1.v" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_auto_pc_1/sim/MicroBlaze_HBM_Streams_auto_pc_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

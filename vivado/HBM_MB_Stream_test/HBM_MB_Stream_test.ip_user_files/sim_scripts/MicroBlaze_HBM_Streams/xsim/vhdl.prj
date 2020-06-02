@@ -1,0 +1,14 @@
+vhdl xil_defaultlib  \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_rst_Clk_100M_0/sim/MicroBlaze_HBM_Streams_rst_Clk_100M_0.vhd" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_microblaze_0_2/sim/MicroBlaze_HBM_Streams_microblaze_0_2.vhd" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_dlmb_v10_1/sim/MicroBlaze_HBM_Streams_dlmb_v10_1.vhd" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_ilmb_v10_1/sim/MicroBlaze_HBM_Streams_ilmb_v10_1.vhd" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_dlmb_bram_if_cntlr_1/sim/MicroBlaze_HBM_Streams_dlmb_bram_if_cntlr_1.vhd" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_ilmb_bram_if_cntlr_1/sim/MicroBlaze_HBM_Streams_ilmb_bram_if_cntlr_1.vhd" \
+"../../../bd/MicroBlaze_HBM_Streams/ipshared/a2c0/hdl/MB_Debug_v1_0_S00_AXI_input.vhd" \
+"../../../bd/MicroBlaze_HBM_Streams/ipshared/a2c0/hdl/MB_Debug_v1_0.vhd" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_MB_Debug_0_0/sim/MicroBlaze_HBM_Streams_MB_Debug_0_0.vhd" \
+"../../../bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_axi_dma_0_2/sim/MicroBlaze_HBM_Streams_axi_dma_0_2.vhd" \
+"../../../bd/MicroBlaze_HBM_Streams/sim/MicroBlaze_HBM_Streams.vhd" \
+
+nosort

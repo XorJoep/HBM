@@ -1,0 +1,1042 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:48:12 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Tue May 26 13:52:10 2020
+# Process ID: 36531
+# Current directory: /work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.runs/impl_1
+# Command line: vivado -log MicroBlaze_HBM_Streams_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MicroBlaze_HBM_Streams_wrapper.tcl -notrace
+# Log file: /work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.runs/impl_1/MicroBlaze_HBM_Streams_wrapper.vdi
+# Journal file: /work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source MicroBlaze_HBM_Streams_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/work/jdumont/workspaces/vivado/ip_repo/MB_Debug_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/apps/xilinx/Vivado/2019.2/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1648.621 ; gain = 32.727 ; free physical = 25031 ; free virtual = 89707
+Command: link_design -top MicroBlaze_HBM_Streams_wrapper -part xcu280-fsvh2892-2L-e
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xcu280-fsvh2892-2L-e
+Netlist sorting complete. Time (s): cpu = 00:00:00.52 ; elapsed = 00:00:00.52 . Memory (MB): peak = 2881.449 ; gain = 0.000 ; free physical = 23794 ; free virtual = 88470
+INFO: [Netlist 29-17] Analyzing 394 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_hbm_0_0/hdl/par/hbm_ip.xdc] for cell 'MicroBlaze_HBM_Streams_i/hbm_0/inst'
+create_clock: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3162.691 ; gain = 23.781 ; free physical = 23585 ; free virtual = 88261
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_hbm_0_0/hdl/par/hbm_ip.xdc] for cell 'MicroBlaze_HBM_Streams_i/hbm_0/inst'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_axi_dma_0_1/MicroBlaze_HBM_Streams_axi_dma_0_1.xdc] for cell 'MicroBlaze_HBM_Streams_i/axi_dma_0/U0'
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_axi_dma_0_1/MicroBlaze_HBM_Streams_axi_dma_0_1.xdc:61]
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_axi_dma_0_1/MicroBlaze_HBM_Streams_axi_dma_0_1.xdc] for cell 'MicroBlaze_HBM_Streams_i/axi_dma_0/U0'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_axi_traffic_gen_0_0/MicroBlaze_HBM_Streams_axi_traffic_gen_0_0.xdc] for cell 'MicroBlaze_HBM_Streams_i/axi_traffic_gen_0/inst'
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_axi_traffic_gen_0_0/MicroBlaze_HBM_Streams_axi_traffic_gen_0_0.xdc] for cell 'MicroBlaze_HBM_Streams_i/axi_traffic_gen_0/inst'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_rst_Clk_100M_0/MicroBlaze_HBM_Streams_rst_Clk_100M_0_board.xdc] for cell 'MicroBlaze_HBM_Streams_i/rst_Clk_100M/U0'
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_rst_Clk_100M_0/MicroBlaze_HBM_Streams_rst_Clk_100M_0_board.xdc] for cell 'MicroBlaze_HBM_Streams_i/rst_Clk_100M/U0'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_rst_Clk_100M_0/MicroBlaze_HBM_Streams_rst_Clk_100M_0.xdc] for cell 'MicroBlaze_HBM_Streams_i/rst_Clk_100M/U0'
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_rst_Clk_100M_0/MicroBlaze_HBM_Streams_rst_Clk_100M_0.xdc] for cell 'MicroBlaze_HBM_Streams_i/rst_Clk_100M/U0'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_microblaze_0_2/MicroBlaze_HBM_Streams_microblaze_0_2.xdc] for cell 'MicroBlaze_HBM_Streams_i/microblaze_0/U0'
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_microblaze_0_2/MicroBlaze_HBM_Streams_microblaze_0_2.xdc] for cell 'MicroBlaze_HBM_Streams_i/microblaze_0/U0'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_dlmb_v10_1/MicroBlaze_HBM_Streams_dlmb_v10_1.xdc] for cell 'MicroBlaze_HBM_Streams_i/microblaze_0_local_memory/dlmb_v10/U0'
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_dlmb_v10_1/MicroBlaze_HBM_Streams_dlmb_v10_1.xdc] for cell 'MicroBlaze_HBM_Streams_i/microblaze_0_local_memory/dlmb_v10/U0'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_ilmb_v10_1/MicroBlaze_HBM_Streams_ilmb_v10_1.xdc] for cell 'MicroBlaze_HBM_Streams_i/microblaze_0_local_memory/ilmb_v10/U0'
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_ilmb_v10_1/MicroBlaze_HBM_Streams_ilmb_v10_1.xdc] for cell 'MicroBlaze_HBM_Streams_i/microblaze_0_local_memory/ilmb_v10/U0'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_clk_wiz_0_0/MicroBlaze_HBM_Streams_clk_wiz_0_0_board.xdc] for cell 'MicroBlaze_HBM_Streams_i/clk_wiz_0/inst'
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_clk_wiz_0_0/MicroBlaze_HBM_Streams_clk_wiz_0_0_board.xdc] for cell 'MicroBlaze_HBM_Streams_i/clk_wiz_0/inst'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_clk_wiz_0_0/MicroBlaze_HBM_Streams_clk_wiz_0_0.xdc] for cell 'MicroBlaze_HBM_Streams_i/clk_wiz_0/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_clk_wiz_0_0/MicroBlaze_HBM_Streams_clk_wiz_0_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_clk_wiz_0_0/MicroBlaze_HBM_Streams_clk_wiz_0_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:14 ; elapsed = 00:00:27 . Memory (MB): peak = 3693.984 ; gain = 515.625 ; free physical = 23184 ; free virtual = 87860
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_clk_wiz_0_0/MicroBlaze_HBM_Streams_clk_wiz_0_0.xdc] for cell 'MicroBlaze_HBM_Streams_i/clk_wiz_0/inst'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_axi_dma_0_1/MicroBlaze_HBM_Streams_axi_dma_0_1_clocks.xdc] for cell 'MicroBlaze_HBM_Streams_i/axi_dma_0/U0'
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_axi_dma_0_1/MicroBlaze_HBM_Streams_axi_dma_0_1_clocks.xdc] for cell 'MicroBlaze_HBM_Streams_i/axi_dma_0/U0'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_auto_us_0/MicroBlaze_HBM_Streams_auto_us_0_clocks.xdc] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/s00_couplers/auto_us/inst'
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_auto_us_0/MicroBlaze_HBM_Streams_auto_us_0_clocks.xdc] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/s00_couplers/auto_us/inst'
+Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_auto_ds_0/MicroBlaze_HBM_Streams_auto_ds_0_clocks.xdc] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst'
+Finished Parsing XDC File [/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_auto_ds_0/MicroBlaze_HBM_Streams_auto_ds_0_clocks.xdc] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst'
+Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/I_TSTRB_FIFO/USE_SYNC_FIFO.I_SYNC_FIFO/NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst'
+Finished Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/I_TSTRB_FIFO/USE_SYNC_FIFO.I_SYNC_FIFO/NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst'
+Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_XD_FIFO/NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst'
+Finished Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_XD_FIFO/NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst'
+Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst'
+Finished Sourcing Tcl File [/opt/apps/xilinx/Vivado/2019.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Generating merged BMM file for the design top 'MicroBlaze_HBM_Streams_wrapper'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: /work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.srcs/sources_1/bd/MicroBlaze_HBM_Streams/ip/MicroBlaze_HBM_Streams_microblaze_0_2/data/mb_bootloop_le.elf 
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23235 ; free virtual = 87911
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 107 instances were transformed.
+  HBM_ONE_STACK_INTF => HBM_ONE_STACK_INTF (HBM_REF_CLK, HBM_SNGLBLI_INTF_APB, HBM_SNGLBLI_INTF_AXI(x16)): 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 3 instances
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 64 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 16 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 21 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+
+13 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:53 ; elapsed = 00:02:11 . Memory (MB): peak = 3934.102 ; gain = 2248.695 ; free physical = 23235 ; free virtual = 87911
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcu280'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcu280'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23225 ; free virtual = 87901
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 1f82a1048
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23183 ; free virtual = 87859
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 20 inverter(s) to 9602 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 220d02bad
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23067 ; free virtual = 87743
+INFO: [Opt 31-389] Phase Retarget created 1126 cells and removed 1228 cells
+INFO: [Opt 31-1021] In phase Retarget, 96 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 13 inverter(s) to 14 load pin(s).
+Phase 2 Constant propagation | Checksum: 217eaa757
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23072 ; free virtual = 87748
+INFO: [Opt 31-389] Phase Constant propagation created 1711 cells and removed 5865 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 90 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 1ca4847d4
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23076 ; free virtual = 87752
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 1411 cells
+INFO: [Opt 31-1021] In phase Sweep, 440 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+INFO: [Opt 31-274] Optimized connectivity to 4 cascaded buffer cells
+INFO: [Opt 31-1112] Starts optimizing BUFG(s) with a common MMCM/DPLL/XPLL driver.
+INFO: [Opt 31-1112] Starts optimizing BUFG(s) with a common driver.
+INFO: [Opt 31-1092] Phase BUFG optimization transformed 0 BUFG(s) to MBUFG(s).
+Phase 4 BUFG optimization | Checksum: 1ca4847d4
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:18 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23076 ; free virtual = 87752
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+INFO: [Opt 31-1021] In phase BUFG optimization, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 1ca4847d4
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:19 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23075 ; free virtual = 87751
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 1ae1575f8
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:19 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23066 ; free virtual = 87742
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 4 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 111 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |            1126  |            1228  |                                             96  |
+|  Constant propagation         |            1711  |            5865  |                                             90  |
+|  Sweep                        |               0  |            1411  |                                            440  |
+|  BUFG optimization            |               0  |               0  |                                              1  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               4  |                                            111  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23075 ; free virtual = 87751
+Ending Logic Optimization Task | Checksum: 17b1665fa
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:20 . Memory (MB): peak = 3934.102 ; gain = 0.000 ; free physical = 23075 ; free virtual = 87751
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.121 | TNS=0.000 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 51 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 1 WE to EN ports
+Number of BRAM Ports augmented: 14 newly gated: 1 Total Ports: 102
+Ending PowerOpt Patch Enables Task | Checksum: 154d4ffd3
+
+Time (s): cpu = 00:00:00.49 ; elapsed = 00:00:00.53 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21923 ; free virtual = 86599
+Ending Power Optimization Task | Checksum: 154d4ffd3
+
+Time (s): cpu = 00:01:30 ; elapsed = 00:02:32 . Memory (MB): peak = 5461.855 ; gain = 1527.754 ; free physical = 21969 ; free virtual = 86645
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 154d4ffd3
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21969 ; free virtual = 86645
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21969 ; free virtual = 86645
+Ending Netlist Obfuscation Task | Checksum: 1b67cbfe8
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21969 ; free virtual = 86645
+INFO: [Common 17-83] Releasing license: Implementation
+46 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:02:07 ; elapsed = 00:03:08 . Memory (MB): peak = 5461.855 ; gain = 1527.754 ; free physical = 21969 ; free virtual = 86645
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21943 ; free virtual = 86619
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.07 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21927 ; free virtual = 86608
+INFO: [Common 17-1381] The checkpoint '/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.runs/impl_1/MicroBlaze_HBM_Streams_wrapper_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21924 ; free virtual = 86610
+INFO: [runtcl-4] Executing : report_drc -file MicroBlaze_HBM_Streams_wrapper_drc_opted.rpt -pb MicroBlaze_HBM_Streams_wrapper_drc_opted.pb -rpx MicroBlaze_HBM_Streams_wrapper_drc_opted.rpx
+Command: report_drc -file MicroBlaze_HBM_Streams_wrapper_drc_opted.rpt -pb MicroBlaze_HBM_Streams_wrapper_drc_opted.pb -rpx MicroBlaze_HBM_Streams_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.runs/impl_1/MicroBlaze_HBM_Streams_wrapper_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21913 ; free virtual = 86599
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcu280'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcu280'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC REQP-1852] BUFGCE_cascade_from_clock_buf: Cascaded clock buffers exist in the design with constant CE pin. This may result in large clock skew and timing violations. Cell BUFGCE MicroBlaze_HBM_Streams_i/hbm_0/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0 I pin is driven by another clock buffer MicroBlaze_HBM_Streams_i/clk_wiz_0/inst/clkout1_buf.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21905 ; free virtual = 86591
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: cef2e059
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.06 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21905 ; free virtual = 86591
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21905 ; free virtual = 86591
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 146de7371
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21852 ; free virtual = 86538
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1f1d82c08
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:11 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21788 ; free virtual = 86474
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1f1d82c08
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:12 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21790 ; free virtual = 86476
+Phase 1 Placer Initialization | Checksum: 1f1d82c08
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:12 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21777 ; free virtual = 86463
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 15d91c390
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:25 . Memory (MB): peak = 5461.855 ; gain = 0.000 ; free physical = 21510 ; free virtual = 86196
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1018] Found 1300 candidate LUT instances to create LUTNM shape
+INFO: [Physopt 32-775] End 1 Pass. Optimized 597 nets or cells. Created 33 new cells, deleted 564 existing cells and moved 0 existing cell
+WARNING: [Physopt 32-894] Found a constraint with the -through option on pin MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/src_arst or the net immediately connecting to the pin. This constraint will block optimizations for this and all downstream leaf pins.
+INFO: [Physopt 32-76] Pass 1. Identified 6 candidate nets for fanout optimization.
+INFO: [Physopt 32-81] Processed net MicroBlaze_HBM_Streams_i/axi_mem_intercon/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[0].gen_mi_write.wdata_mux_w/gen_wmux.wmux_aw_fifo/storage_data1_reg[0]_0. Replicated 7 times.
+INFO: [Physopt 32-81] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_RESET/sig_cmd_stat_rst_user_reg_n_cdc_from_reg. Replicated 27 times.
+INFO: [Physopt 32-81] Processed net MicroBlaze_HBM_Streams_i/rst_Clk_100M/U0/peripheral_aresetn[0]. Replicated 21 times.
+WARNING: [Physopt 32-894] Found a constraint with the -through option on pin MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/src_arst or the net immediately connecting to the pin. This constraint will block optimizations for this and all downstream leaf pins.
+INFO: [Physopt 32-81] Processed net MicroBlaze_HBM_Streams_i/axi_mem_intercon/s00_couplers/auto_us/inst/gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_non_fifo_r_upsizer.mi_register_slice_inst/r.r_pipe/s_ready_i_reg_0. Replicated 13 times.
+INFO: [Physopt 32-81] Processed net MicroBlaze_HBM_Streams_i/axi_mem_intercon/xbar/inst/gen_samd.crossbar_samd/gen_master_slots[0].reg_slice_mi/r.r_pipe/s_ready_i_reg_0. Replicated 13 times.
+INFO: [Physopt 32-81] Processed net MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout[35]. Replicated 5 times.
+INFO: [Physopt 32-232] Optimized 6 nets. Created 86 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 6 nets or cells. Created 86 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.40 . Memory (MB): peak = 6181.270 ; gain = 0.000 ; free physical = 21486 ; free virtual = 86172
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6181.270 ; gain = 0.000 ; free physical = 21486 ; free virtual = 86172
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |           33  |            564  |                   597  |           0  |           1  |  00:00:02  |
+|  Very High Fanout                                 |           86  |              0  |                     6  |           0  |           1  |  00:00:03  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |          119  |            564  |                   603  |           0  |           7  |  00:00:05  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 154aca1fd
+
+Time (s): cpu = 00:04:40 ; elapsed = 00:02:04 . Memory (MB): peak = 6181.270 ; gain = 719.414 ; free physical = 21487 ; free virtual = 86173
+Phase 2.2 Global Placement Core | Checksum: cd83d712
+
+Time (s): cpu = 00:04:55 ; elapsed = 00:02:07 . Memory (MB): peak = 6229.297 ; gain = 767.441 ; free physical = 21394 ; free virtual = 86081
+Phase 2 Global Placement | Checksum: cd83d712
+
+Time (s): cpu = 00:04:55 ; elapsed = 00:02:07 . Memory (MB): peak = 6229.297 ; gain = 767.441 ; free physical = 21487 ; free virtual = 86173
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 10ceaba48
+
+Time (s): cpu = 00:04:59 ; elapsed = 00:02:09 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21493 ; free virtual = 86180
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 220ace278
+
+Time (s): cpu = 00:05:03 ; elapsed = 00:02:10 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21453 ; free virtual = 86140
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 192067661
+
+Time (s): cpu = 00:05:05 ; elapsed = 00:02:11 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21451 ; free virtual = 86138
+
+Phase 3.4 IO Cut Optimizer
+Phase 3.4 IO Cut Optimizer | Checksum: 192067661
+
+Time (s): cpu = 00:05:05 ; elapsed = 00:02:12 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21451 ; free virtual = 86137
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 2090f6654
+
+Time (s): cpu = 00:05:09 ; elapsed = 00:02:13 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21450 ; free virtual = 86137
+
+Phase 3.6 Small Shape DP
+
+Phase 3.6.1 Small Shape Clustering
+Phase 3.6.1 Small Shape Clustering | Checksum: 215ca2399
+
+Time (s): cpu = 00:05:15 ; elapsed = 00:02:17 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21406 ; free virtual = 86092
+
+Phase 3.6.2 Flow Legalize Slice Clusters
+Phase 3.6.2 Flow Legalize Slice Clusters | Checksum: 1eaffd703
+
+Time (s): cpu = 00:05:16 ; elapsed = 00:02:18 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21401 ; free virtual = 86087
+
+Phase 3.6.3 Slice Area Swap
+Phase 3.6.3 Slice Area Swap | Checksum: 150db3fca
+
+Time (s): cpu = 00:05:27 ; elapsed = 00:02:25 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21304 ; free virtual = 85991
+
+Phase 3.6.4 Commit Slice Clusters
+Phase 3.6.4 Commit Slice Clusters | Checksum: 11d49b0a6
+
+Time (s): cpu = 00:05:39 ; elapsed = 00:02:29 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21374 ; free virtual = 86060
+Phase 3.6 Small Shape DP | Checksum: 11d49b0a6
+
+Time (s): cpu = 00:05:40 ; elapsed = 00:02:29 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21384 ; free virtual = 86070
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 127404f91
+
+Time (s): cpu = 00:05:42 ; elapsed = 00:02:31 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21383 ; free virtual = 86069
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 207d286ca
+
+Time (s): cpu = 00:05:42 ; elapsed = 00:02:32 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21385 ; free virtual = 86071
+Phase 3 Detail Placement | Checksum: 207d286ca
+
+Time (s): cpu = 00:05:43 ; elapsed = 00:02:32 . Memory (MB): peak = 6293.324 ; gain = 831.469 ; free physical = 21386 ; free virtual = 86072
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1d1bb3943
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-33] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_s_ready_dup, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_S2MM_MMAP_SKID_BUF/sig_s_ready_dup, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-35] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/ENABLE_AXIS_SKID.I_S2MM_STRM_SKID_BUF/sig_s_ready_dup, inserted BUFG to drive 1153 loads.
+INFO: [Place 46-45] Replicated bufg driver MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/ENABLE_AXIS_SKID.I_S2MM_STRM_SKID_BUF/sig_s_ready_dup_reg_replica
+INFO: [Place 46-35] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_m_valid_dup_reg[0], inserted BUFG to drive 1162 loads.
+INFO: [Place 46-35] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/I_TSTRB_FIFO/USE_SYNC_FIFO.I_SYNC_FIFO/NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO/E[0], inserted BUFG to drive 1160 loads.
+INFO: [Place 46-35] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/I_MSSAI_SKID_BUF/sig_s_ready_dup, inserted BUFG to drive 1153 loads.
+INFO: [Place 46-45] Replicated bufg driver MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/I_MSSAI_SKID_BUF/sig_s_ready_dup_reg_replica
+INFO: [Place 46-35] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_INCLUDE_REALIGNER.I_S2MM_REALIGNER/GEN_INCLUDE_SCATTER.I_S2MM_SCATTER/I_MSSAI_SKID_BUF/sig_s_ready_out_reg_0[0], inserted BUFG to drive 1153 loads.
+INFO: [Place 46-35] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/ENABLE_AXIS_SKID.I_S2MM_STRM_SKID_BUF/sig_data_reg_out[1023]_i_1__2_n_0, inserted BUFG to drive 1153 loads.
+INFO: [Place 46-35] Processed net MicroBlaze_HBM_Streams_i/axi_mem_intercon/s00_couplers/auto_us/inst/gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.read_addr_inst/GEN_CMD_QUEUE.cmd_queue/mm2s_rready_reg_0[0], inserted BUFG to drive 1027 loads.
+INFO: [Place 46-32] Processed net MicroBlaze_HBM_Streams_i/axi_mem_intercon/xbar/inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/s_ready_i_reg[0], BUFG insertion was skipped because the netlist could not be updated.
+INFO: [Place 46-32] Processed net MicroBlaze_HBM_Streams_i/axi_mem_intercon/m00_couplers/auto_ds/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/SR[0], BUFG insertion was skipped because the netlist could not be updated.
+INFO: [Place 46-56] BUFG insertion identified 11 candidate nets. Inserted BUFG: 7, Replicated BUFG Driver: 2, Skipped due to Placement/Routing Conflicts: 2, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 2.
+Phase 4.1.1.1 BUFG Insertion | Checksum: e52b01eb
+
+Time (s): cpu = 00:06:17 ; elapsed = 00:02:49 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21376 ; free virtual = 86063
+
+Phase 4.1.1.2 BUFG Replication
+INFO: [Place 46-63] BUFG replication identified 0 candidate nets: Replicated nets: 0, Replicated BUFGs: 0, Replicated BUFG Driver: 0, Skipped due to Placement / Routing Conflict: 0, Skipped due to Timing: 0, Skipped due to constraints: 0
+Phase 4.1.1.2 BUFG Replication | Checksum: e52b01eb
+
+Time (s): cpu = 00:06:18 ; elapsed = 00:02:49 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21376 ; free virtual = 86063
+INFO: [Place 30-746] Post Placement Timing Summary WNS=inf. For the most accurate timing information please run report_timing.
+
+Phase 4.1.1.3 Replication
+INFO: [Place 46-19] Post Replication Timing Summary WNS=inf. For the most accurate timing information please run report_timing.
+Phase 4.1.1.3 Replication | Checksum: d1f5dcd1
+
+Time (s): cpu = 00:06:18 ; elapsed = 00:02:50 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21378 ; free virtual = 86064
+Phase 4.1.1 Post Placement Optimization | Checksum: d1f5dcd1
+
+Time (s): cpu = 00:06:18 ; elapsed = 00:02:50 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21382 ; free virtual = 86068
+Phase 4.1 Post Commit Optimization | Checksum: d1f5dcd1
+
+Time (s): cpu = 00:06:19 ; elapsed = 00:02:50 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21382 ; free virtual = 86069
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: d1f5dcd1
+
+Time (s): cpu = 00:06:20 ; elapsed = 00:02:51 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21439 ; free virtual = 86125
+Netlist sorting complete. Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.13 . Memory (MB): peak = 6318.516 ; gain = 0.000 ; free physical = 21309 ; free virtual = 85995
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 13dd565a8
+
+Time (s): cpu = 00:06:53 ; elapsed = 00:03:25 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21309 ; free virtual = 85995
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6318.516 ; gain = 0.000 ; free physical = 21310 ; free virtual = 85996
+Phase 4.4 Final Placement Cleanup | Checksum: 185103de4
+
+Time (s): cpu = 00:06:53 ; elapsed = 00:03:25 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21309 ; free virtual = 85995
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 185103de4
+
+Time (s): cpu = 00:06:53 ; elapsed = 00:03:25 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21309 ; free virtual = 85995
+Ending Placer Task | Checksum: 180d17da5
+
+Time (s): cpu = 00:06:53 ; elapsed = 00:03:25 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21310 ; free virtual = 85996
+INFO: [Common 17-83] Releasing license: Implementation
+100 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:07:02 ; elapsed = 00:03:39 . Memory (MB): peak = 6318.516 ; gain = 856.660 ; free physical = 21662 ; free virtual = 86349
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6318.516 ; gain = 0.000 ; free physical = 21665 ; free virtual = 86351
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 6350.531 ; gain = 0.004 ; free physical = 21595 ; free virtual = 86333
+INFO: [Common 17-1381] The checkpoint '/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.runs/impl_1/MicroBlaze_HBM_Streams_wrapper_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 6350.535 ; gain = 32.020 ; free physical = 21647 ; free virtual = 86347
+INFO: [runtcl-4] Executing : report_io -file MicroBlaze_HBM_Streams_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.41 ; elapsed = 00:00:00.73 . Memory (MB): peak = 6350.535 ; gain = 0.000 ; free physical = 21586 ; free virtual = 86287
+INFO: [runtcl-4] Executing : report_utilization -file MicroBlaze_HBM_Streams_wrapper_utilization_placed.rpt -pb MicroBlaze_HBM_Streams_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file MicroBlaze_HBM_Streams_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.47 . Memory (MB): peak = 6350.535 ; gain = 0.000 ; free physical = 21646 ; free virtual = 86348
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcu280'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcu280'
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6350.535 ; gain = 0.000 ; free physical = 21609 ; free virtual = 86310
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.942 |
+Phase 1 Physical Synthesis Initialization | Checksum: 2587d30d2
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 6350.535 ; gain = 0.000 ; free physical = 21519 ; free virtual = 86220
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.942 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 2587d30d2
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 6350.535 ; gain = 0.000 ; free physical = 21517 ; free virtual = 86218
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.942 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[316].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[316]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[316]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.940 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[55].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[55]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[55]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.937 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[7].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[7]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.933 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[116].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[116]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[116]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.930 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[54].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[54]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[54]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.927 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[1028].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1028]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[1028]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.924 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[76].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[76]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[76]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.921 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[812].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[812]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[812]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.918 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[891].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[891]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[891]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.041 | TNS=-7376.915 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[916].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[916]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[916]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.040 | TNS=-7376.912 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[105].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[105]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[105]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.040 | TNS=-7376.910 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[120].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[120]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[120]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.040 | TNS=-7376.907 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[121].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[121]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[121]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.040 | TNS=-7376.905 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[103].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[103]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[103]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.040 | TNS=-7376.903 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[82].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[82]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[82]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.040 | TNS=-7376.901 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[84].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[84]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[84]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.040 | TNS=-7376.899 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[16].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[16]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[16]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.040 | TNS=-7376.897 |
+INFO: [Physopt 32-662] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[31].  Did not re-place instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[31]
+INFO: [Physopt 32-702] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[31]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_halt_reg_dly3.  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_halt_reg_dly3_reg
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_halt_reg_dly3. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.925 | TNS=-7242.170 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_last_mmap_dbeat_reg.  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_last_mmap_dbeat_reg_reg
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_last_mmap_dbeat_reg. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.766 | TNS=-7057.713 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_data2addr_stop_req.  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_halt_reg_reg
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_data2addr_stop_req. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.751 | TNS=-7040.227 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_addr_posted_cntr[0].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_addr_posted_cntr_reg[0]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_addr_posted_cntr[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.385 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[1011].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1011]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[1011]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.383 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[1012].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1012]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[1012]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.381 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[83].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[83]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[83]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.378 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[246].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[246]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[246]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.374 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[247].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[247]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[247]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.370 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[249].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[249]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[249]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.366 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[219].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[219]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[219]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.363 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[951].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[951]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[951]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.360 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[965].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[965]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[965]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.356 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[220].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[220]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[220]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.353 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.353 |
+Phase 3 Critical Path Optimization | Checksum: 2587d30d2
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:15 . Memory (MB): peak = 6350.535 ; gain = 0.000 ; free physical = 21517 ; free virtual = 86218
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.353 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[936].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[936]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[936]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.350 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[297].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[297]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[297]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.348 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[588].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[588]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[588]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.346 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[596].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[596]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[596]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.344 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[637].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[637]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[637]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.342 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[1021].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1021]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[1021]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.339 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[272].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[272]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[272]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.337 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[600].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[600]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[600]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.334 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[602].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[602]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[602]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.331 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[604].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[604]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[604]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.328 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[943].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[943]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[943]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.326 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[947].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[947]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[947]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.323 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[979].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[979]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[979]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.320 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[26].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[26]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[26]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.316 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[109].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[109]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[109]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.315 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[116].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[116]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[116]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.312 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[94].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[94]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[94]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.311 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[30].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[30]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_strb_reg_out_reg[128]_0[30]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.306 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[112].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[112]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[112]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.305 |
+INFO: [Physopt 32-663] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[74].  Re-placed instance MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[74]
+INFO: [Physopt 32-735] Processed net MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[74]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.302 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.729 | TNS=-7015.302 |
+Phase 4 Critical Path Optimization | Checksum: 2587d30d2
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:18 . Memory (MB): peak = 6350.535 ; gain = 0.000 ; free physical = 21517 ; free virtual = 86218
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6350.535 ; gain = 0.000 ; free physical = 21520 ; free virtual = 86221
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6374.539 ; gain = 0.000 ; free physical = 21518 ; free virtual = 86219
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-1.729 | TNS=-7015.302 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.312  |        361.639  |            0  |              0  |                    51  |           0  |           2  |  00:00:11  |
+|  Total          |          0.312  |        361.639  |            0  |              0  |                    51  |           0  |           3  |  00:00:11  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6374.539 ; gain = 0.000 ; free physical = 21514 ; free virtual = 86215
+Ending Physical Synthesis Task | Checksum: 2587d30d2
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:21 . Memory (MB): peak = 6374.539 ; gain = 24.004 ; free physical = 21514 ; free virtual = 86215
+INFO: [Common 17-83] Releasing license: Implementation
+272 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:01:08 ; elapsed = 00:00:25 . Memory (MB): peak = 6374.539 ; gain = 24.004 ; free physical = 21584 ; free virtual = 86285
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 6374.539 ; gain = 0.000 ; free physical = 21573 ; free virtual = 86274
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 6374.539 ; gain = 0.000 ; free physical = 21507 ; free virtual = 86259
+INFO: [Common 17-1381] The checkpoint '/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.runs/impl_1/MicroBlaze_HBM_Streams_wrapper_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 6374.539 ; gain = 0.000 ; free physical = 21565 ; free virtual = 86281
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcu280'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcu280'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: 511590dd ConstDB: 0 ShapeSum: 4efad475 RouteDB: 3d4ad730
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: e87c6297
+
+Time (s): cpu = 00:08:46 ; elapsed = 00:07:45 . Memory (MB): peak = 6843.875 ; gain = 461.320 ; free physical = 20990 ; free virtual = 85705
+Post Restoration Checksum: NetGraph: 8c334635 NumContArr: a7dd3238 Constraints: bdbd21cf Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 1f1cd9a3c
+
+Time (s): cpu = 00:08:47 ; elapsed = 00:07:45 . Memory (MB): peak = 6843.875 ; gain = 461.320 ; free physical = 20990 ; free virtual = 85705
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 1f1cd9a3c
+
+Time (s): cpu = 00:08:47 ; elapsed = 00:07:46 . Memory (MB): peak = 6843.875 ; gain = 461.320 ; free physical = 20842 ; free virtual = 85557
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 1f1cd9a3c
+
+Time (s): cpu = 00:08:47 ; elapsed = 00:07:46 . Memory (MB): peak = 6843.875 ; gain = 461.320 ; free physical = 20836 ; free virtual = 85551
+
+Phase 2.4 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.4 Global Clock Net Routing | Checksum: 15300f6cf
+
+Time (s): cpu = 00:09:00 ; elapsed = 00:08:00 . Memory (MB): peak = 6918.102 ; gain = 535.547 ; free physical = 20825 ; free virtual = 85540
+
+Phase 2.5 Update Timing
+Phase 2.5 Update Timing | Checksum: 2e9ccd3d4
+
+Time (s): cpu = 00:09:29 ; elapsed = 00:08:15 . Memory (MB): peak = 6918.102 ; gain = 535.547 ; free physical = 20827 ; free virtual = 85542
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.653 | TNS=-6181.578| WHS=-0.047 | THS=-7.523 |
+
+Phase 2 Router Initialization | Checksum: 27a13740b
+
+Time (s): cpu = 00:09:48 ; elapsed = 00:08:20 . Memory (MB): peak = 6918.102 ; gain = 535.547 ; free physical = 20816 ; free virtual = 85531
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00022145 %
+  Global Horizontal Routing Utilization  = 0.000366832 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 31661
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 27604
+  Number of Partially Routed Nets     = 4057
+  Number of Node Overlaps             = 79
+
+
+Phase 3 Initial Routing
+Number SLLs per Column: 1440
+Estimated SLL Demand Per Column: 
+  SLR [1-2]        0     0     0     2     1     0     0     1     0     0     0     0     0     0     0     0  Demand:     4 Available: 23040 Utilization(%): 0.00
+  SLR [0-1]        0     0     0     2     1     0     0     1     0     0     0     0     0     0     0     0  Demand:     4 Available: 23040 Utilization(%): 0.00
+
+Phase 3.1 Global Routing
+Number SLLs per Column: 1440
+Estimated SLL Demand Per Column: 
+  SLR [1-2]        0     0     0     2     1     0     0     1     0     0     0     0     0     0     0     0  Demand:     4 Available: 23040 Utilization(%): 0.00
+  SLR [0-1]        0     0     0     2     1     0     0     1     0     0     0     0     0     0     0     0  Demand:     4 Available: 23040 Utilization(%): 0.00
+Phase 3.1 Global Routing | Checksum: 16dad4968
+
+Time (s): cpu = 00:09:55 ; elapsed = 00:08:28 . Memory (MB): peak = 6946.281 ; gain = 563.727 ; free physical = 20816 ; free virtual = 85531
+Phase 3 Initial Routing | Checksum: 2e23efc11
+
+Time (s): cpu = 00:10:26 ; elapsed = 00:08:40 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20742 ; free virtual = 85457
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 3539
+ Number of Nodes with overlaps = 179
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.855 | TNS=-7704.601| WHS=-0.015 | THS=-0.091 |
+
+Phase 4.1 Global Iteration 0 | Checksum: ee0b2145
+
+Time (s): cpu = 00:12:25 ; elapsed = 00:10:09 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20738 ; free virtual = 85454
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 47
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.769 | TNS=-7469.472| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 229a2da19
+
+Time (s): cpu = 00:12:33 ; elapsed = 00:10:16 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20749 ; free virtual = 85464
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.765 | TNS=-7440.238| WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: eb618444
+
+Time (s): cpu = 00:12:41 ; elapsed = 00:10:22 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20753 ; free virtual = 85468
+
+Phase 4.4 Global Iteration 3
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.719 | TNS=-7466.423| WHS=N/A    | THS=N/A    |
+
+Phase 4.4 Global Iteration 3 | Checksum: ece7e280
+
+Time (s): cpu = 00:12:48 ; elapsed = 00:10:28 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20740 ; free virtual = 85455
+
+Phase 4.5 Global Iteration 4
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.786 | TNS=-7510.626| WHS=N/A    | THS=N/A    |
+
+Phase 4.5 Global Iteration 4 | Checksum: 10f999845
+
+Time (s): cpu = 00:12:51 ; elapsed = 00:10:31 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20754 ; free virtual = 85469
+Phase 4 Rip-up And Reroute | Checksum: 10f999845
+
+Time (s): cpu = 00:12:51 ; elapsed = 00:10:31 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20754 ; free virtual = 85469
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 142c44ace
+
+Time (s): cpu = 00:13:02 ; elapsed = 00:10:35 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20772 ; free virtual = 85487
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.719 | TNS=-7466.423| WHS=0.010  | THS=0.000  |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 1aa5faaa2
+
+Time (s): cpu = 00:13:03 ; elapsed = 00:10:35 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20777 ; free virtual = 85493
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1aa5faaa2
+
+Time (s): cpu = 00:13:03 ; elapsed = 00:10:35 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20777 ; free virtual = 85493
+Phase 5 Delay and Skew Optimization | Checksum: 1aa5faaa2
+
+Time (s): cpu = 00:13:03 ; elapsed = 00:10:36 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20777 ; free virtual = 85493
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 15e5c85dd
+
+Time (s): cpu = 00:13:12 ; elapsed = 00:10:38 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20777 ; free virtual = 85492
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.719 | TNS=-7466.423| WHS=0.010  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 149287679
+
+Time (s): cpu = 00:13:12 ; elapsed = 00:10:39 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20777 ; free virtual = 85492
+Phase 6 Post Hold Fix | Checksum: 149287679
+
+Time (s): cpu = 00:13:13 ; elapsed = 00:10:39 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20777 ; free virtual = 85492
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.263727 %
+  Global Horizontal Routing Utilization  = 0.364169 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 69.9531%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 47.8673%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 73.0769%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 78.8462%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 185c6b95d
+
+Time (s): cpu = 00:13:16 ; elapsed = 00:10:40 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20765 ; free virtual = 85480
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 185c6b95d
+
+Time (s): cpu = 00:13:17 ; elapsed = 00:10:40 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20763 ; free virtual = 85478
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 185c6b95d
+
+Time (s): cpu = 00:13:19 ; elapsed = 00:10:43 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20762 ; free virtual = 85477
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-1.719 | TNS=-7466.423| WHS=0.010  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 185c6b95d
+
+Time (s): cpu = 00:13:19 ; elapsed = 00:10:43 . Memory (MB): peak = 7062.281 ; gain = 679.727 ; free physical = 20775 ; free virtual = 85490
+Skip laguna hold fix in PhysOpt in Router as non-negative WHS value: 9.585e-12 .
+Time taken to check if laguna hold fix is required (in secs): 0
+
+Phase 11 Physical Synthesis in Router
+
+Phase 11.1 Physical Synthesis Initialization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-1.719 | TNS=-7463.338 | WHS=0.010 | THS=0.000 |
+Phase 11.1 Physical Synthesis Initialization | Checksum: 185c6b95d
+
+Time (s): cpu = 00:14:08 ; elapsed = 00:11:15 . Memory (MB): peak = 7642.281 ; gain = 1259.727 ; free physical = 20683 ; free virtual = 85398
+WARNING: [Physopt 32-745] Physical Optimization has determined that the magnitude of the negative slack is too large and it is highly unlikely that slack will be improved. Post-Route Physical Optimization is most effective when WNS is above -0.5ns
+
+Phase 11.2 Critical Path Optimization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-1.719 | TNS=-7463.338 | WHS=0.010 | THS=0.000 |
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_MicroBlaze_HBM_Streams_clk_wiz_0_0. Processed net: MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF/sig_data_reg_out_reg[1031]_0[76].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_MicroBlaze_HBM_Streams_clk_wiz_0_0. Processed net: MicroBlaze_HBM_Streams_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/I_WR_DATA_CNTL/sig_addr_posted_cntr[0].
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-1.719 | TNS=-7463.338 | WHS=0.010 | THS=0.000 |
+Phase 11.2 Critical Path Optimization | Checksum: f3b109ce
+
+Time (s): cpu = 00:14:17 ; elapsed = 00:11:18 . Memory (MB): peak = 7669.961 ; gain = 1287.406 ; free physical = 20668 ; free virtual = 85383
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7669.961 ; gain = 0.000 ; free physical = 20674 ; free virtual = 85389
+INFO: [Physopt 32-669] Post Physical Optimization Timing Summary | WNS=-1.719 | TNS=-7463.338 | WHS=0.010 | THS=0.000 |
+Phase 11 Physical Synthesis in Router | Checksum: 20f859929
+
+Time (s): cpu = 00:14:19 ; elapsed = 00:11:19 . Memory (MB): peak = 7669.961 ; gain = 1287.406 ; free physical = 20752 ; free virtual = 85467
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:14:19 ; elapsed = 00:11:19 . Memory (MB): peak = 7669.961 ; gain = 1287.406 ; free physical = 20961 ; free virtual = 85676
+INFO: [Common 17-83] Releasing license: Implementation
+296 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:14:29 ; elapsed = 00:11:32 . Memory (MB): peak = 7669.961 ; gain = 1295.422 ; free physical = 20961 ; free virtual = 85676
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7669.961 ; gain = 0.000 ; free physical = 20961 ; free virtual = 85676
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 7669.961 ; gain = 0.000 ; free physical = 20872 ; free virtual = 85651
+INFO: [Common 17-1381] The checkpoint '/work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.runs/impl_1/MicroBlaze_HBM_Streams_wrapper_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 7669.961 ; gain = 0.000 ; free physical = 20938 ; free virtual = 85670
+INFO: [runtcl-4] Executing : report_drc -file MicroBlaze_HBM_Streams_wrapper_drc_routed.rpt -pb MicroBlaze_HBM_Streams_wrapper_drc_routed.pb -rpx MicroBlaze_HBM_Streams_wrapper_drc_routed.rpx
+Command: report_drc -file MicroBlaze_HBM_Streams_wrapper_drc_routed.rpt -pb MicroBlaze_HBM_Streams_wrapper_drc_routed.pb -rpx MicroBlaze_HBM_Streams_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.runs/impl_1/MicroBlaze_HBM_Streams_wrapper_drc_routed.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 7756.773 ; gain = 86.812 ; free physical = 20932 ; free virtual = 85664
+INFO: [runtcl-4] Executing : report_methodology -file MicroBlaze_HBM_Streams_wrapper_methodology_drc_routed.rpt -pb MicroBlaze_HBM_Streams_wrapper_methodology_drc_routed.pb -rpx MicroBlaze_HBM_Streams_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file MicroBlaze_HBM_Streams_wrapper_methodology_drc_routed.rpt -pb MicroBlaze_HBM_Streams_wrapper_methodology_drc_routed.pb -rpx MicroBlaze_HBM_Streams_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /work/jdumont/workspaces/vivado/HBM_MB_Stream_test/HBM_MB_Stream_test.runs/impl_1/MicroBlaze_HBM_Streams_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:29 ; elapsed = 00:00:17 . Memory (MB): peak = 7756.773 ; gain = 0.000 ; free physical = 20931 ; free virtual = 85665
+INFO: [runtcl-4] Executing : report_power -file MicroBlaze_HBM_Streams_wrapper_power_routed.rpt -pb MicroBlaze_HBM_Streams_wrapper_power_summary_routed.pb -rpx MicroBlaze_HBM_Streams_wrapper_power_routed.rpx
+Command: report_power -file MicroBlaze_HBM_Streams_wrapper_power_routed.rpt -pb MicroBlaze_HBM_Streams_wrapper_power_summary_routed.pb -rpx MicroBlaze_HBM_Streams_wrapper_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+308 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:30 ; elapsed = 00:00:18 . Memory (MB): peak = 7756.773 ; gain = 0.000 ; free physical = 20872 ; free virtual = 85622
+INFO: [runtcl-4] Executing : report_route_status -file MicroBlaze_HBM_Streams_wrapper_route_status.rpt -pb MicroBlaze_HBM_Streams_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file MicroBlaze_HBM_Streams_wrapper_timing_summary_routed.rpt -pb MicroBlaze_HBM_Streams_wrapper_timing_summary_routed.pb -rpx MicroBlaze_HBM_Streams_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2L, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file MicroBlaze_HBM_Streams_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file MicroBlaze_HBM_Streams_wrapper_clock_utilization_routed.rpt
+report_clock_utilization: Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 7756.773 ; gain = 0.000 ; free physical = 20853 ; free virtual = 85604
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file MicroBlaze_HBM_Streams_wrapper_bus_skew_routed.rpt -pb MicroBlaze_HBM_Streams_wrapper_bus_skew_routed.pb -rpx MicroBlaze_HBM_Streams_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2L, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Common 17-206] Exiting Vivado at Tue May 26 14:15:41 2020...
