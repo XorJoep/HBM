@@ -1,9 +1,50 @@
-# Vitis ignores
-metadata/
+##### Vitis 
+.metadata/
 RemoteSystemsTempFiles/
 Debug/
 _ide/
 export/
+.log/
+logs/
+microblaze\_0/
+resources/
 
 .cproject
 .project
+.analytics
+
+*.sprj
+*.spr
+*.log
+*.str
+
+###### vivado
+#root
+*_ex/
+questa\_compiled/
+waveforms/
+drivers/
+ip\_repo/
+*.jou
+
+
+#inside folder
+.Xil/
+*.cache
+*.hw
+*.ip\_user\_files/
+*.runs
+*.sim
+*.tmp
+*.xpr
+*.xsa
+
+#within .src
+ip/
+ipshared/
+sim/
+synth/
+ui/
+*.xdc
+*.bmm
+*.bxml

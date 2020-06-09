@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
---Date        : Sat May 30 14:34:37 2020
---Host        : qce-alveo01.ewi.tudelft.nl running 64-bit CentOS Linux release 7.7.1908 (Core)
+--Date        : Sun Jun  7 14:19:10 2020
+--Host        : qce-alveo01.ewi.tudelft.nl running 64-bit CentOS Linux release 7.8.2003 (Core)
 --Command     : generate_target MicroBlaze_HBM_Streams_wrapper.bd
 --Design      : MicroBlaze_HBM_Streams_wrapper
 --Purpose     : IP block netlist

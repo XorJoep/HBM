@@ -1,0 +1,30 @@
+add wave -position insertpoint \
+sim:/tb_gen/DUT/clk_wiz_0/clk_out1 \
+sim:/tb_gen/resetn \
+sim:/tb_gen/DUT/MB_Debug_0/status_out_0 \
+sim:/tb_gen/DUT/MB_Debug_0/status_out_1 \
+sim:/tb_gen/DUT/MB_Debug_0/status_out_2 \
+sim:/tb_gen/DUT/MB_Debug_0/status_out_3 \
+sim:/tb_gen/DUT/microblaze_0/Trace_Instruction \
+sim:/tb_gen/DUT/microblaze_0/Trace_Valid_Instr \
+sim:/tb_gen/DUT/microblaze_0/Trace_PC \
+sim:/tb_gen/DUT/microblaze_0/Trace_Reg_Write \
+sim:/tb_gen/DUT/microblaze_0/Trace_Reg_Addr \
+sim:/tb_gen/DUT/microblaze_0/Trace_New_Reg_Value \
+sim:/tb_gen/DUT/microblaze_0/Trace_Data_Address \
+sim:/tb_gen/DUT/microblaze_0/Trace_Data_Write_Value \
+sim:/tb_gen/DUT/microblaze_0/Trace_Data_Byte_Enable \
+sim:/tb_gen/DUT/axi_dma_0/U0/s_axis_s2mm_sts_tdata \
+sim:/tb_gen/DUT/axi_dma_0/U0/s_axis_s2mm_sts_tkeep \
+sim:/tb_gen/DUT/axi_dma_0/U0/s_axis_s2mm_sts_tvalid \
+sim:/tb_gen/DUT/axi_dma_0/U0/s_axis_s2mm_sts_tready \
+sim:/tb_gen/DUT/axi_dma_0/U0/s_axis_s2mm_sts_tlast \
+sim:/tb_gen/DUT/axi_dma_0/U0/s2mm_da \
+sim:/tb_gen/DUT/axi_dma_0/U0/s2mm_length \
+sim:/tb_gen/DUT/axi_dma_0/U0/s2mm_error \
+sim:/tb_gen/DUT/axi_dma_0/U0/s2mm_dmacr \
+sim:/tb_gen/DUT/axi_dma_0/U0/s2mm_dmasr \
+sim:/tb_gen/DUT/axi_traffic_gen_0/m_axis_1_tdata \
+sim:/tb_gen/DUT/axi_traffic_gen_0/m_axis_1_tlast \
+sim:/tb_gen/DUT/axi_traffic_gen_0/m_axis_1_tvalid \
+sim:/tb_gen/DUT/axi_traffic_gen_0/m_axis_1_tready
