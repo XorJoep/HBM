@@ -34,13 +34,12 @@ DUT: component MicroBlaze_HBM_Streams port map (
 
 process
 begin
-  sysclk0_clk_n <= '0';
+  sysclk0_clk_p <= '0';
   wait for 5.0 ns;
-  sysclk0_clk_n <= '1';
+  sysclk0_clk_p <= '1';
   wait for 5.0 ns;
 end process;
-
-sysclk0_clk_p <= NOT sysclk0_clk_n;
+sysclk0_clk_n <= NOT sysclk0_clk_p;
 process
 begin
   resetn <= '0';
