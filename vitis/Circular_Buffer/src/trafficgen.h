@@ -5,8 +5,8 @@
 #include "xtrafgen.h"
 #include "xparameters.h"
 
-#define TRAFGEN_DEV_ID	XPAR_AXI_TRAFFIC_GEN_0_DEVICE_ID
+#define TRAFGEN_ID	XPAR_XTRAFGEN_0_DEVICE_ID
 
-int setupTrafGen(XTrafGen *TrafGenPtr, int data_size, int pkt_cnt);
+void initTrafGen(XTrafGen *TrafGenPtr, int data_size, int pkt_cnt);
 
 #endif
