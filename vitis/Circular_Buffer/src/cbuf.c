@@ -1,15 +1,11 @@
 #include "cbuf.h"
 
-cbuf_pt circular_buf_init(uintptr_t base_address, int bank_size, int n_banks) {
-	cbuf_pt cbuf = malloc(sizeof(circular_buf_t));
-
+void circular_buf_init(cbuf_pt cbuf, uintptr_t base_address, int bank_size, int n_banks) {
 	circular_buf_reset(cbuf);
 
 	cbuf->size = bank_size * n_banks;
 	cbuf->base_address = base_address;
-	
-	return cbuf;
-}
+	}
 
 void circular_buf_reset(cbuf_pt cbuf) {
 	cbuf->w_head = 0;
@@ -20,8 +16,8 @@ void circular_buf_reset(cbuf_pt cbuf) {
 	cbuf->base_address = 0;
 	cbuf->size = 0; 
 
-	memset(cbuf->heads, -1, sizeof(*cbuf->heads) * NUM_OF_DMAS * 2);
-	memset(cbuf->tails, -1, sizeof(*cbuf->tails) * NUM_OF_DMAS * 2);
+	memset(cbuf->heads, -1, sizeof(*cbuf->heads) * N_TOTAL_DMA * 2);
+	memset(cbuf->tails, -1, sizeof(*cbuf->tails) * N_TOTAL_DMA * 2);
 	cbuf->base = 0;
 }
 
