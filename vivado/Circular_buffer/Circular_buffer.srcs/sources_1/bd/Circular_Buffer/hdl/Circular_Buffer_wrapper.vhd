@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
---Date        : Sun Jun 28 16:49:51 2020
+--Date        : Sun Jul  5 14:58:20 2020
 --Host        : qce-alveo01.ewi.tudelft.nl running 64-bit CentOS Linux release 7.8.2003 (Core)
 --Command     : generate_target Circular_Buffer_wrapper.bd
 --Design      : Circular_Buffer_wrapper

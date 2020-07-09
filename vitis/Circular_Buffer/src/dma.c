@@ -51,8 +51,8 @@ void startDMAs(dma_t *dmas) {
 	for (int i = 0; i < N_TOTAL_DMA; ++i)
 	{
 		curDMA = &dmas[i];
-		channel_start(&(curDMA->s2mm), MAX_LENGTH);
-		channel_start(&(curDMA->mm2s), MAX_LENGTH);
+		channel_start(&(curDMA->s2mm), PKT_SIZE_BYTE);
+		channel_start(&(curDMA->mm2s), PKT_SIZE_BYTE);
 	}
 }
 

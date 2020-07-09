@@ -3,6 +3,7 @@
 
 #include "xaxidma.h"
 #include "cbuf.h"
+#include "hbm.h"
 
 #define S2MM XAXIDMA_DEVICE_TO_DMA
 #define MM2S XAXIDMA_DMA_TO_DEVICE
@@ -14,6 +15,7 @@ typedef struct channel_t {
 	cbuf_pt cbuf;
 	uintptr_t head;
 	uintptr_t tail;
+	uintptr_t p_tail;
 
 	int started;
 } channel_t;

@@ -4,9 +4,10 @@
 // to use traffic generator
 #include "xtrafgen.h"
 #include "xparameters.h"
+#include "config.h"
 
 #define TRAFGEN_ID	XPAR_XTRAFGEN_0_DEVICE_ID
 
-void initTrafGen(XTrafGen *TrafGenPtr, int data_size, int pkt_cnt);
+void initTrafGen(XTrafGen *TrafGenPtr);
 
 #endif

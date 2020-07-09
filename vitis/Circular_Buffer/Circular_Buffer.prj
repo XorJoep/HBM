@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="Circular_Buffer" location="/work/jdumont/workspaces/vitis/Circular_Buffer" platform="/work/jdumont/workspaces/vitis/Circular_Buffer_wrapper/export/Circular_Buffer_wrapper/Circular_Buffer_wrapper.xpfm" platformUID="xilinx:au280::0.0(custom)" systemProject="Circular_Buffer_system" sysConfig="Circular_Buffer_wrapper" runtime="cpp" cpu="standalone_domain" cpuInstance="MB_controller" os="standalone" mssSignature="381894541a94693c55683a03c0727cc0">
-  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.285691224" dirty="true">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.285691224">
     <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
     <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
   </configuration>

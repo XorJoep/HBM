@@ -23,7 +23,7 @@ cbuf_t cbuf_output;
 int main() {
 	int ii;
 	setStatus(0, ST_SETUP_TRAFGEN);
-	initTrafGen(&TrafGen, PKT_SIZE, PKT_CNT);
+	initTrafGen(&TrafGen);
 	
 	setStatus(0, ST_INIT_DMA);
 	setStatus(1, 1);
@@ -49,8 +49,7 @@ int main() {
 	setStatus(0, ST_ENABLE_TRAFGEN);
 	XTrafGen_StreamEnable(&TrafGen);
 
-	int runs = 50;
-	for (ii = 0; ii < runs; ++ii)
+	for (ii = 0; 1; ++ii)
 	{
 		setStatus(1, ii);
 
