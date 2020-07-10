@@ -7,7 +7,7 @@ end tb_gen;
 
 architecture TB of tb_gen is
 
-component MicroBlaze_HBM_Streams is
+component Circular_Buffer is
 port (
   core_ext_start_0 : in STD_LOGIC;
   core_ext_stop_0 : in STD_LOGIC;
@@ -15,7 +15,7 @@ port (
   sysclk0_clk_n : in STD_LOGIC;
   sysclk0_clk_p : in STD_LOGIC
 );
-end component MicroBlaze_HBM_Streams;
+end component Circular_Buffer;
 
 signal core_ext_start_0 : STD_LOGIC;
 signal core_ext_stop_0 : STD_LOGIC;
@@ -24,7 +24,7 @@ signal sysclk0_clk_n : STD_LOGIC;
 signal sysclk0_clk_p : STD_LOGIC;
 begin
 
-DUT: component MicroBlaze_HBM_Streams port map (
+DUT: component Circular_Buffer port map (
   core_ext_start_0 => core_ext_start_0,
   core_ext_stop_0 => core_ext_stop_0,
   resetn => resetn,
@@ -34,12 +34,13 @@ DUT: component MicroBlaze_HBM_Streams port map (
 
 process
 begin
-  sysclk0_clk_p <= '0';
+  sysclk0_clk_n <= '0';
   wait for 5.0 ns;
-  sysclk0_clk_p <= '1';
+  sysclk0_clk_n <= '1';
   wait for 5.0 ns;
 end process;
-sysclk0_clk_n <= NOT sysclk0_clk_p;
+
+sysclk0_clk_p <= NOT sysclk0_clk_n;
 process
 begin
   resetn <= '0';

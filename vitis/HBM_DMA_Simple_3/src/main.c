@@ -4,9 +4,9 @@
 #include "trafficgen.h"
 #include "dma.h"
 
-#define TDATA_WIDTH 1024 // bits [set in vivado tfcg IP]
-#define PKT_SIZE 1024 * 8 // data elements per packet
-#define PKT_CNT 2 // how many packets tfcg sends before stop
+#define TDATA_WIDTH 256 // bits [set in vivado tfcg IP]
+#define PKT_SIZE 128 * 8 // data elements per packet
+#define PKT_CNT 10 // how many packets tfcg sends before stop
 #define MAX_LENGTH PKT_SIZE * TDATA_WIDTH / 8 // bytes
 
 

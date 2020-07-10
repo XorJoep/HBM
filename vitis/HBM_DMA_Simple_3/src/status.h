@@ -42,11 +42,11 @@
 #define DMA_BD_RING_TO_HW		0x15
 #define DMA_SEND_DONE			0xFF
 
-#define DMA_PERFORM_WRITE		0x10
-#define DMA_PERFORM_READ		0x11
+#define DMA_SETUP_WRITE			0x10
+#define DMA_SETUP_READ			0x11
 
-#define DMA_WAIT_BUSY			0x12
-#define DMA_PUSHING_BUFFER 		0x13
+
+#define DMA_WAIT_BUSY			0x0F
 
 #define DMA_SINGLE_DONE 		0xFF
 
