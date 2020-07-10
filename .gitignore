@@ -8,6 +8,7 @@ export/
 logs/
 microblaze\_0/
 resources/
+MB\_controller
 
 .cproject
 .project
