@@ -2,7 +2,10 @@
 #define __CIRCULAR_BUFFER_H_
 
 #include <stdint.h>
+#include <stdbool.h>
 #include "config.h"
+#include "hbm.h"
+#include "string.h"
 
 /*
  * First inspiration from

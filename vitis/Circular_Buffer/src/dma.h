@@ -1,36 +1,41 @@
 #ifndef __DMA_H_
 #define __DMA_H_
 
+#include <stdbool.h>
+
 // to use axidma
 #include "xaxidma.h"
 
 // to know stuff about the devices
-#include "xparameters.h"
+#include "config.h"
 
 // to debug easily
 #include "status.h"
 
-#define DMA_DEV_ID		XPAR_AXIDMA_0_DEVICE_ID
+// to use cbuf
+#include "cbuf.h"
+#include "channel.h"
 
-#define HBM_MEM_BASE_ADDR	0x10000000
+#define S2MM XAXIDMA_DEVICE_TO_DMA
+#define MM2S XAXIDMA_DMA_TO_DEVICE
 
-#define RX_BUFFER_BASE		(HBM_MEM_BASE_ADDR)
-#define RX_BUFFER_BASE_HIGH	(HBM_MEM_BASE_ADDR + 0x00000FFF)
+typedef struct dma_t {
+	XAxiDma dma_instance;
 
+	channel_t s2mm;
+	channel_t mm2s;
+} dma_t;
 
-#define TX_BD_SPACE_BASE	(RX_BUFFER_BASE + 0x10000000)
-#define TX_BD_SPACE_HIGH	(HBM_MEM_BASE_ADDR + 0x00000FFF)
+typedef dma_t* dma_pt;
 
-// Macros (From dma_passthrough example)
-#define ALIGN64(some_ptr) (int*)(some_ptr + XAXIDMA_BD_MINIMUM_ALIGNMENT-some_ptr%XAXIDMA_BD_MINIMUM_ALIGNMENT);
+void dma_init(dma_pt DMA, int device_ID, int internal_dma, cbuf_pt cbuf_input, cbuf_pt cbuf_output);
 
+void dma_reset(dma_pt dma);
 
+void checkDMAs(dma_t *dmas);
 
-int setupDMA(XAxiDma *AxiDmaPtr);
-int setupTX(XAxiDma * AxiDmaPtr, UINTPTR bdMemSpacePtr);
-int sendData(XAxiDma * AxiDmaPtr, UINTPTR MemoryBaseAddress, int max_pkt_len);
-int waitForDone(XAxiDma * AxiDmaPtr);
+void startDMAs(dma_t *dmas);
 
-int simpleTransfer(XAxiDma * AxiDmaPtr, int max_pkt_len);
+//todo: dma_free
 
-#endif
+#endif //__DMA_H_

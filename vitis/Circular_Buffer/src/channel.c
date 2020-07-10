@@ -44,6 +44,7 @@ void channel_start(channel_pt channel, int package_size) {
 	if (channel->direction == MM2S) { 
 		cbuf_head = channel->cbuf->r_head;
 		bank_state_required = BANK_READY_TO_READ;
+	}
 	else {
 		cbuf_head = channel->cbuf->w_head;
 		bank_state_required = BANK_READY_TO_WRITE;

@@ -1,221 +1,58 @@
 #include "dma.h"
 
-int setupDMA(XAxiDma *AxiDmaPtr){
-	int Status = XST_SUCCESS;
-	XAxiDma_Config *Config;
 
+void dma_init(dma_pt dma, int device_ID, int internal_dma, cbuf_pt cbuf_input, cbuf_pt cbuf_output) {
 
-	Config = XAxiDma_LookupConfig(DMA_DEV_ID);
-	if (!Config) {
-		return XST_FAILURE;
-	}
+	XAxiDma_CfgInitialize(&(dma->dma_instance), XAxiDma_LookupConfig(device_ID));
 
-	Status = XAxiDma_CfgInitialize(AxiDmaPtr, Config);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
+	dma_reset(dma);
 
-	if(XAxiDma_HasSg(AxiDmaPtr)){
-		return XST_FAILURE;
-	}
-
-	/* Disable interrupts, we use polling mode
-	 */
-	XAxiDma_IntrDisable(AxiDmaPtr, XAXIDMA_IRQ_ALL_MASK,
+	// Disable interrupts, we use polling mode
+	XAxiDma_IntrDisable(&(dma->dma_instance), XAXIDMA_IRQ_ALL_MASK,
 						XAXIDMA_DEVICE_TO_DMA);
-	XAxiDma_IntrDisable(AxiDmaPtr, XAXIDMA_IRQ_ALL_MASK,
+	XAxiDma_IntrDisable(&(dma->dma_instance), XAXIDMA_IRQ_ALL_MASK,
 						XAXIDMA_DMA_TO_DEVICE);
 
-	// Reset DMA
-	XAxiDma_Reset(AxiDmaPtr);
-	while (!XAxiDma_ResetIsDone(AxiDmaPtr)) {}
-
-	return Status;
-
-}
-
-int setupTX(XAxiDma * AxiDmaPtr, UINTPTR bdMemSpacePtr)
-{
-	XAxiDma_BdRing *TxRingPtr;
-	XAxiDma_Bd*     bd_ptr;
-	XAxiDma_Bd BdTemplate;
-	XAxiDma_Bd*     cur_bd_ptr;
-	UINTPTR bdMemSpacePtrAligned;
-	int Delay = 0;
-	int Coalesce = 1;
-	int Status = XST_SUCCESS;
-	int ii;
-	int buf_addr;
-	int cr_bits = 0;
-	u32 BdCount;
-	u32 MemSpaceSize;
-
-	setStatus(1, DMA_GET_TX_RING);
-	TxRingPtr = XAxiDma_GetTxRing(AxiDmaPtr);
-
-
-	/* Disable all TX interrupts before TxBD space setup */
-	setStatus(1, DMA_SET_INT_DIS);
-	XAxiDma_BdRingIntDisable(TxRingPtr, XAXIDMA_IRQ_ALL_MASK);
-
-
-	/* Set TX delay and coalesce */
-	setStatus(1, DMA_SET_COALESCE);
-	XAxiDma_BdRingSetCoalesce(TxRingPtr, Coalesce, Delay);
-
-
-	/* Setup TxBD space  */
-	setStatus(1, DMA_RING_CALC);
-	BdCount = XAxiDma_BdRingCntCalc(XAXIDMA_BD_MINIMUM_ALIGNMENT,
-				TX_BD_SPACE_HIGH - TX_BD_SPACE_BASE + 1);
-	MemSpaceSize = BdCount * (sizeof(XAxiDma_Bd) + (XAXIDMA_BD_MINIMUM_ALIGNMENT - 1)) & ~(XAXIDMA_BD_MINIMUM_ALIGNMENT - 1);
-	setStatus(2, BdCount);;
-	setStatus(3, MemSpaceSize);;
-
-	/* Create space to store BDRING */
-	setStatus(1, DMA_MALLOC_BDSPACE);
-	bdMemSpacePtr = malloc(MemSpaceSize);
-	bdMemSpacePtrAligned = ALIGN64((int)bdMemSpacePtr);
-
-
-	setStatus(1, DMA_RING_CREATE);
-	Status = XAxiDma_BdRingCreate(TxRingPtr, 
-				bdMemSpacePtrAligned, bdMemSpacePtrAligned,
-				XAXIDMA_BD_MINIMUM_ALIGNMENT, BdCount);
-	if (Status != XST_SUCCESS) {
-		setStatus(1, Status);
-		return XST_FAILURE;
+	if(internal_dma) {
+		channel_init(&(dma->s2mm), S2MM, &(dma->dma_instance), cbuf_output);
+		channel_init(&(dma->mm2s), MM2S, &(dma->dma_instance), cbuf_input);
 	}
-
-	/*
-	 * We create an all-zero BD as the template.
-	 */
-	setStatus(1, DMA_BD_CLEAR);
-	XAxiDma_BdClear(&BdTemplate);
-
-	setStatus(1, DMA_BD_CLONE);
-	Status = XAxiDma_BdRingClone(TxRingPtr, &BdTemplate);
-	if (Status != XST_SUCCESS) {
-		setStatus(1, Status);
-		return XST_FAILURE;
+	else {
+		channel_init(&(dma->s2mm), S2MM, &(dma->dma_instance), cbuf_input);
+		channel_init(&(dma->mm2s), MM2S, &(dma->dma_instance), cbuf_output);
 	}
-
-	/* Start the TX channel */
-	setStatus(1, DMA_BD_RING_START);
-	Status = XAxiDma_BdRingStart(TxRingPtr);
-	if (Status != XST_SUCCESS) {
-		setStatus(1, Status);
-		return XST_FAILURE;
-	}
-
-	setStatus(1, DMA_SETUP_DONE);
-	return XST_SUCCESS;
-}
-
-int sendData(XAxiDma * AxiDmaPtr, UINTPTR MemoryBaseAddress, int max_pkt_len){
-	XAxiDma_BdRing *TxRingPtr;
-	XAxiDma_Bd *BdPtr;
-	int Status;
-	int bdAmount = 1; /* temp */
-
-	setStatus(1, DMA_GET_TX_RING);
-	TxRingPtr = XAxiDma_GetTxRing(AxiDmaPtr);
-
-	/* Allocate a BD */
-	setStatus(1, DMA_BD_RING_ALLOC);
-	Status = XAxiDma_BdRingAlloc(TxRingPtr, bdAmount, &BdPtr);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-
-	/* Set up the BD using the information of the packet to transmit */
-	setStatus(1, DMA_BD_SET_BUFFER);
-	Status = XAxiDma_BdSetBufAddr(BdPtr, MemoryBaseAddress);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-
-	setStatus(1, DMA_BD_SET_LENGTH);
-	Status = XAxiDma_BdSetLength(BdPtr, max_pkt_len,
-				TxRingPtr->MaxTransferLen);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-
-	/* For single packet, both SOF and EOF are to be set
-	 */
-	setStatus(1, DMA_BD_SET_CTRL);
-	XAxiDma_BdSetCtrl(BdPtr, XAXIDMA_BD_CTRL_TXEOF_MASK |
-						XAXIDMA_BD_CTRL_TXSOF_MASK);
-
-	setStatus(1, DMA_BD_SET_ID);
-	XAxiDma_BdSetId(BdPtr, MemoryBaseAddress);
-
-	/* Give the BD to DMA to kick off the transmission. */
-	setStatus(1, DMA_BD_RING_TO_HW);
-	Status = XAxiDma_BdRingToHw(TxRingPtr, 1, BdPtr);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-
-	setStatus(1, DMA_SEND_DONE);
-	return XST_SUCCESS;
-}
-
-int waitForDone(XAxiDma * AxiDmaPtr){
-	XAxiDma_BdRing *TxRingPtr;
-	XAxiDma_Bd *BdPtr;
-	int ProcessedBdCount;
-	int Status;
-
-	TxRingPtr = XAxiDma_GetTxRing(AxiDmaPtr);
-
-	/* Wait until the one BD TX transaction is done */
-	while ((ProcessedBdCount = XAxiDma_BdRingFromHw(TxRingPtr,
-						       XAXIDMA_ALL_BDS,
-						       &BdPtr)) == 0) {
-	}
-
-	/* Free all processed TX BDs for future transmission */
-	Status = XAxiDma_BdRingFree(TxRingPtr, ProcessedBdCount, BdPtr);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-
-	return XST_SUCCESS;
 }
 
 
-int simpleTransfer(XAxiDma * AxiDmaPtr, int max_pkt_len) {
-	int Status = XST_SUCCESS;
+void dma_reset(dma_pt dma) {
+	channel_reset(&(dma->s2mm));
+	channel_reset(&(dma->mm2s));
 
-	int *BufferPtr = (int *) RX_BUFFER_BASE;
-
-	setStatus(1, DMA_PERFORM_WRITE);
-	setStatus(2, max_pkt_len);
-	Status = XAxiDma_SimpleTransfer(AxiDmaPtr, (UINTPTR) BufferPtr,
-				max_pkt_len, XAXIDMA_DEVICE_TO_DMA);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-
-	setStatus(1, DMA_WAIT_BUSY);
-	while (XAxiDma_Busy(AxiDmaPtr,XAXIDMA_DEVICE_TO_DMA)) {
-			/* Wait */
-	}
-
-	setStatus(1, DMA_PERFORM_READ);
-	Status = XAxiDma_SimpleTransfer(AxiDmaPtr, (UINTPTR) BufferPtr,
-				max_pkt_len, XAXIDMA_DMA_TO_DEVICE);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-
-	setStatus(1, DMA_WAIT_BUSY);
-	while (XAxiDma_Busy(AxiDmaPtr,XAXIDMA_DMA_TO_DEVICE)) {
-			/* Wait */
-	}
-
-  	setStatus(1, DMA_SINGLE_DONE);
-	return Status;
+	XAxiDma_Reset(&dma->dma_instance);
+	while (!XAxiDma_ResetIsDone(&dma->dma_instance)) {}
 }
+
+
+void checkDMAs(dma_t *dmas) {
+	dma_pt curDMA;
+
+	for (int i = 0; i < N_TOTAL_DMA; ++i)
+	{
+		curDMA = &dmas[i];
+		channel_check(&(curDMA->s2mm));
+		channel_check(&(curDMA->mm2s));
+	}
+}
+
+
+void startDMAs(dma_t *dmas) {
+	dma_pt curDMA;
+
+	for (int i = 0; i < N_TOTAL_DMA; ++i)
+	{
+		curDMA = &dmas[i];
+		channel_start(&(curDMA->s2mm), PKT_SIZE_BYTE);
+		channel_start(&(curDMA->mm2s), PKT_SIZE_BYTE);
+	}
+}
+
