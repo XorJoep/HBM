@@ -6,7 +6,7 @@
 #define TDATA_WIDTH_BIT 256 // bits [set in vivado tfcg IP]
 #define TDATA_WIDTH_BYTE (TDATA_WIDTH_BIT / 8) // bits [set in vivado tfcg IP]
 
-#define PKT_SIZE_KBYTE 1 // In KB
+#define PKT_SIZE_KBYTE 15 // In KB
 #define PKT_SIZE_BYTE PKT_SIZE_KBYTE * 1024 // in B
 
 #define PKT_LEN (PKT_SIZE_BYTE / TDATA_WIDTH_BYTE) // data elements per packet
