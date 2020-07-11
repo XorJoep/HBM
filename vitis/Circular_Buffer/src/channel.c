@@ -77,8 +77,9 @@ void channel_start(channel_pt channel, int package_size) {
 
 	if (channel->direction == MM2S) { // dirty fix.. should be possible without if-case, since it is tested earlier
 		channel->cbuf->r_head = channel->head; // update cbuf head
+	}
 	else {
-		channel->cbuf->w_head = channel->head;;
+		channel->cbuf->w_head = channel->head;
 	}
 	XAxiDma_SimpleTransfer(
 					channel->dma_inst_ptr, // module

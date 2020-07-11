@@ -42,9 +42,9 @@ int main() {
 
 	setStatus(0, ST_INIT_CBUF);
 	setStatus(1, 1);
-	circular_buf_init(&cbuf_input, (uintptr_t) HBM_BASE_INPUT_ADDR, HBM_BANK_SIZE, HBM_N_BANKS);
+	circular_buf_init(&cbuf_input, HBM_BASE_INPUT_ADDR);
 	setStatus(1, 2);
-	circular_buf_init(&cbuf_output, (uintptr_t) HBM_BASE_OUTPUT_ADDR, HBM_BANK_SIZE, HBM_N_BANKS);
+	circular_buf_init(&cbuf_output, HBM_BASE_OUTPUT_ADDR);
 
 	setStatus(0, ST_ENABLE_TRAFGEN);
 	XTrafGen_StreamEnable(&TrafGen);

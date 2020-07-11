@@ -34,7 +34,7 @@ typedef struct cbuf_t {
 
 typedef cbuf_t* cbuf_pt;
 
-void circular_buf_init(cbuf_pt cbuf, uintptr_t base_address, int bank_size, int n_banks);
+void circular_buf_init(cbuf_pt cbuf, long long base_address);
 
 void circular_buf_reset(cbuf_pt cbuf);
 

@@ -1,9 +1,9 @@
 #include "cbuf.h"
 
-void circular_buf_init(cbuf_pt cbuf, uintptr_t base_address, int bank_size, int n_banks) {
+void circular_buf_init(cbuf_pt cbuf, long long base_address) {
 	circular_buf_reset(cbuf);
 
-	cbuf->size = bank_size * n_banks;
+	cbuf->size = HBM_N_BANKS * HBM_N_BANKS;
 	cbuf->base_address = base_address;
 	}
 
