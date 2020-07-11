@@ -3,7 +3,7 @@
 void circular_buf_init(cbuf_pt cbuf, long long base_address) {
 	circular_buf_reset(cbuf);
 
-	cbuf->size = HBM_N_BANKS * HBM_N_BANKS;
+	cbuf->size = HBM_N_BANKS * HBM_BANK_SIZE;
 	cbuf->base_address = base_address;
 	}
 
