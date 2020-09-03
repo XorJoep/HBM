@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="hbm_1024b_app" location="/work/jdumont/workspaces/vitis/hbm_1024b_app" platform="/work/jdumont/workspaces/vitis/HBM_1024b_bd_wrapper/export/HBM_1024b_bd_wrapper/HBM_1024b_bd_wrapper.xpfm" platformUID="xilinx:au280::0.0(custom)" systemProject="hbm_1024b_app_system" sysConfig="HBM_1024b_bd_wrapper" runtime="cpp" cpu="domain_microblaze_0" cpuInstance="microblaze_0" os="standalone" mssSignature="885e6cf2741daab87d23c0c30a2481ba">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.1557628796">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.748216697">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

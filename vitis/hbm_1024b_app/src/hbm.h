@@ -5,14 +5,8 @@
 #include <stdint.h>
 
 // HBM Bank 0 address is shared with instruction memory... so cannot be fully used yet
-<<<<<<< HEAD
-#define HBM_N_BANKS				0x10 - 1
-//#define HBM_BANK_SIZE			0x010000000
-#define HBM_BANK_SIZE			0x010000 // 65536 bytes
-=======
 #define HBM_N_BANKS				0x3
 #define HBM_BANK_SIZE			0x010000
->>>>>>> baseline
 #define HBM_BASE_INPUT_ADDR		0x010000000
 #define HBM_BASE_OUTPUT_ADDR	0x110000000
 
