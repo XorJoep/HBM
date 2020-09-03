@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="bd_axi_app" location="/work/jdumont/workspaces/new_vitis/bd_axi_app" platform="/work/jdumont/workspaces/new_vitis/bd_axi/export/bd_axi/bd_axi.xpfm" platformUID="xilinx:au280::0.0(custom)" systemProject="bd_axi_app_system" sysConfig="bd_axi" runtime="cpp" cpu="standalone_domain" cpuInstance="control_microblaze_0" os="standalone" mssSignature="7deb293f68286948cd09e42d5df4fae0">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.174516023">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.960647961" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>
