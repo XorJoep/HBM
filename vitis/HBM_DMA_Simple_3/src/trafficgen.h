@@ -7,6 +7,6 @@
 
 #define TRAFGEN_DEV_ID	XPAR_AXI_TRAFFIC_GEN_0_DEVICE_ID
 
-setupTrafGen(XTrafGen *TrafGenPtr, int data_size, int pkt_cnt);
+int setupTrafGen(XTrafGen *TrafGenPtr, int data_size, int pkt_cnt);
 
 #endif

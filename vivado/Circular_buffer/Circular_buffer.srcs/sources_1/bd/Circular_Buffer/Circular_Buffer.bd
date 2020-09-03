@@ -3,25 +3,26 @@
     "design_info": {
       "boundary_crc": "0x23EE78C00DD5BBA3",
       "device": "xcu280-fsvh2892-2L-e",
-      "name": "MicroBlaze_HBM_Streams",
+      "name": "Circular_Buffer",
       "synth_flow_mode": "None",
       "tool_version": "2019.2.1",
       "validated": "true"
     },
     "design_tree": {
-      "hbm_0": "",
-      "axi_traffic_gen_0": "",
-      "rst_Clk_100M": "",
-      "microblaze_0_axi_periph": {
+      "HBM": "",
+      "traffic_gen": "",
+      "reset_gen": "",
+      "MBlaze_Interconnect": {
         "xbar": "",
         "s00_couplers": {},
         "m00_couplers": {},
         "m01_couplers": {
           "auto_pc": ""
         },
-        "m02_couplers": {}
+        "m02_couplers": {},
+        "m03_couplers": {}
       },
-      "microblaze_0": "",
+      "MB_controller": "",
       "microblaze_0_local_memory": {
         "dlmb_v10": "",
         "ilmb_v10": "",
@@ -29,21 +30,17 @@
         "ilmb_bram_if_cntlr": "",
         "lmb_bram": ""
       },
-      "clk_wiz_0": "",
-      "resetn_inv_0": "",
-      "MB_Debug_0": "",
+      "CLK_Gen": "",
+      "resetn_inv": "",
+      "MB_Debug": "",
+      "main_dma": "",
+      "Stream_sink_0": "",
       "axi_dma_0": "",
-      "axi_mem_intercon": {
-        "s00_couplers": {
-          "auto_pc": ""
-        }
-      },
-      "axi_mem_intercon_1": {
-        "s00_couplers": {
-          "auto_pc": ""
-        }
-      },
-      "Stream_sink_0": ""
+      "axis_data_fifo_0": "",
+      "axi_protocol_convert_0": "",
+      "axi_protocol_convert_1": "",
+      "axi_protocol_convert_2": "",
+      "axi_protocol_convert_3": ""
     },
     "interface_ports": {
       "sysclk0": {
@@ -82,9 +79,9 @@
       }
     },
     "components": {
-      "hbm_0": {
+      "HBM": {
         "vlnv": "xilinx.com:ip:hbm:1.0",
-        "xci_name": "MicroBlaze_HBM_Streams_hbm_0_0",
+        "xci_name": "Circular_Buffer_hbm_0_0",
         "parameters": {
           "HBM_MMCM1_FBOUT_MULT0": {
             "value": "18"
@@ -834,10 +831,10 @@
             "value": "false"
           },
           "USER_SAXI_16": {
-            "value": "false"
+            "value": "true"
           },
           "USER_SAXI_17": {
-            "value": "false"
+            "value": "true"
           },
           "USER_SAXI_18": {
             "value": "false"
@@ -991,9 +988,9 @@
           }
         }
       },
-      "axi_traffic_gen_0": {
+      "traffic_gen": {
         "vlnv": "xilinx.com:ip:axi_traffic_gen:3.0",
-        "xci_name": "MicroBlaze_HBM_Streams_axi_traffic_gen_0_0",
+        "xci_name": "Circular_Buffer_axi_traffic_gen_0_0",
         "parameters": {
           "ATG_OPTIONS": {
             "value": "Custom"
@@ -1036,9 +1033,9 @@
           }
         }
       },
-      "rst_Clk_100M": {
+      "reset_gen": {
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "xci_name": "MicroBlaze_HBM_Streams_rst_Clk_100M_0",
+        "xci_name": "Circular_Buffer_rst_Clk_100M_0",
         "parameters": {
           "RESET_BOARD_INTERFACE": {
             "value": "resetn"
@@ -1048,12 +1045,12 @@
           }
         }
       },
-      "microblaze_0_axi_periph": {
+      "MBlaze_Interconnect": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-        "xci_name": "MicroBlaze_HBM_Streams_microblaze_0_axi_periph_1",
+        "xci_name": "Circular_Buffer_microblaze_0_axi_periph_0",
         "parameters": {
           "NUM_MI": {
-            "value": "3"
+            "value": "4"
           }
         },
         "interface_ports": {
@@ -1070,6 +1067,10 @@
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           },
           "M02_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M03_AXI": {
             "mode": "Master",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           }
@@ -1151,15 +1152,31 @@
           "M02_ARESETN": {
             "type": "rst",
             "direction": "I"
+          },
+          "M03_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M03_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "M03_ARESETN"
+              }
+            }
+          },
+          "M03_ARESETN": {
+            "type": "rst",
+            "direction": "I"
           }
         },
         "components": {
           "xbar": {
             "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
-            "xci_name": "MicroBlaze_HBM_Streams_xbar_2",
+            "xci_name": "Circular_Buffer_xbar_0",
             "parameters": {
               "NUM_MI": {
-                "value": "3"
+                "value": "4"
               },
               "NUM_SI": {
                 "value": "1"
@@ -1325,7 +1342,7 @@
             "components": {
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
-                "xci_name": "MicroBlaze_HBM_Streams_auto_pc_0",
+                "xci_name": "Circular_Buffer_auto_pc_0",
                 "parameters": {
                   "MI_PROTOCOL": {
                     "value": "AXI4"
@@ -1418,31 +1435,67 @@
                 ]
               }
             }
+          },
+          "m03_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "interface_nets": {
+              "m03_couplers_to_m03_couplers": {
+                "interface_ports": [
+                  "S_AXI",
+                  "M_AXI"
+                ]
+              }
+            }
           }
         },
         "interface_nets": {
-          "m02_couplers_to_microblaze_0_axi_periph": {
+          "MBlaze_Interconnect_to_s00_couplers": {
             "interface_ports": [
-              "M02_AXI",
-              "m02_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m02_couplers": {
-            "interface_ports": [
-              "xbar/M02_AXI",
-              "m02_couplers/S_AXI"
-            ]
-          },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
-            ]
-          },
-          "m01_couplers_to_microblaze_0_axi_periph": {
-            "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
+              "S00_AXI",
+              "s00_couplers/S_AXI"
             ]
           },
           "s00_couplers_to_xbar": {
@@ -1451,27 +1504,57 @@
               "xbar/S00_AXI"
             ]
           },
+          "m01_couplers_to_MBlaze_Interconnect": {
+            "interface_ports": [
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m03_couplers": {
+            "interface_ports": [
+              "xbar/M03_AXI",
+              "m03_couplers/S_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
+            ]
+          },
           "xbar_to_m00_couplers": {
             "interface_ports": [
               "xbar/M00_AXI",
               "m00_couplers/S_AXI"
             ]
           },
-          "microblaze_0_axi_periph_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
-          "m00_couplers_to_microblaze_0_axi_periph": {
+          "m00_couplers_to_MBlaze_Interconnect": {
             "interface_ports": [
               "M00_AXI",
               "m00_couplers/M_AXI"
             ]
+          },
+          "m03_couplers_to_MBlaze_Interconnect": {
+            "interface_ports": [
+              "M03_AXI",
+              "m03_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
+            ]
+          },
+          "m02_couplers_to_MBlaze_Interconnect": {
+            "interface_ports": [
+              "M02_AXI",
+              "m02_couplers/M_AXI"
+            ]
           }
         },
         "nets": {
-          "microblaze_0_axi_periph_ACLK_net": {
+          "MBlaze_Interconnect_ACLK_net": {
             "ports": [
               "ACLK",
               "xbar/aclk",
@@ -1480,12 +1563,14 @@
               "m00_couplers/M_ACLK",
               "m01_couplers/M_ACLK",
               "m02_couplers/M_ACLK",
+              "m03_couplers/M_ACLK",
               "m00_couplers/S_ACLK",
               "m01_couplers/S_ACLK",
-              "m02_couplers/S_ACLK"
+              "m02_couplers/S_ACLK",
+              "m03_couplers/S_ACLK"
             ]
           },
-          "microblaze_0_axi_periph_ARESETN_net": {
+          "MBlaze_Interconnect_ARESETN_net": {
             "ports": [
               "ARESETN",
               "xbar/aresetn",
@@ -1494,16 +1579,18 @@
               "m00_couplers/M_ARESETN",
               "m01_couplers/M_ARESETN",
               "m02_couplers/M_ARESETN",
+              "m03_couplers/M_ARESETN",
               "m00_couplers/S_ARESETN",
               "m01_couplers/S_ARESETN",
-              "m02_couplers/S_ARESETN"
+              "m02_couplers/S_ARESETN",
+              "m03_couplers/S_ARESETN"
             ]
           }
         }
       },
-      "microblaze_0": {
+      "MB_controller": {
         "vlnv": "xilinx.com:ip:microblaze:11.0",
-        "xci_name": "MicroBlaze_HBM_Streams_microblaze_0_2",
+        "xci_name": "Circular_Buffer_microblaze_0_0",
         "parameters": {
           "C_ADDR_TAG_BITS": {
             "value": "0"
@@ -1538,7 +1625,7 @@
         },
         "hdl_attributes": {
           "BMM_INFO_PROCESSOR": {
-            "value": "microblaze-le > MicroBlaze_HBM_Streams microblaze_0_local_memory/dlmb_bram_if_cntlr",
+            "value": "microblaze-le > Circular_Buffer microblaze_0_local_memory/dlmb_bram_if_cntlr",
             "value_src": "default"
           },
           "KEEP_HIERARCHY": {
@@ -1571,15 +1658,15 @@
         "components": {
           "dlmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
-            "xci_name": "MicroBlaze_HBM_Streams_dlmb_v10_1"
+            "xci_name": "Circular_Buffer_dlmb_v10_0"
           },
           "ilmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
-            "xci_name": "MicroBlaze_HBM_Streams_ilmb_v10_1"
+            "xci_name": "Circular_Buffer_ilmb_v10_0"
           },
           "dlmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
-            "xci_name": "MicroBlaze_HBM_Streams_dlmb_bram_if_cntlr_1",
+            "xci_name": "Circular_Buffer_dlmb_bram_if_cntlr_0",
             "parameters": {
               "C_ECC": {
                 "value": "0"
@@ -1587,7 +1674,7 @@
             },
             "hdl_attributes": {
               "BMM_INFO_ADDRESS_SPACE": {
-                "value": "byte  0x00000000 32 > MicroBlaze_HBM_Streams microblaze_0_local_memory/lmb_bram",
+                "value": "byte  0x00000000 32 > Circular_Buffer microblaze_0_local_memory/lmb_bram",
                 "value_src": "default"
               },
               "KEEP_HIERARCHY": {
@@ -1598,7 +1685,7 @@
           },
           "ilmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
-            "xci_name": "MicroBlaze_HBM_Streams_ilmb_bram_if_cntlr_1",
+            "xci_name": "Circular_Buffer_ilmb_bram_if_cntlr_0",
             "parameters": {
               "C_ECC": {
                 "value": "0"
@@ -1607,7 +1694,7 @@
           },
           "lmb_bram": {
             "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-            "xci_name": "MicroBlaze_HBM_Streams_lmb_bram_1",
+            "xci_name": "Circular_Buffer_lmb_bram_0",
             "parameters": {
               "Memory_Type": {
                 "value": "True_Dual_Port_RAM"
@@ -1619,28 +1706,16 @@
           }
         },
         "interface_nets": {
-          "microblaze_0_dlmb_bus": {
-            "interface_ports": [
-              "dlmb_v10/LMB_Sl_0",
-              "dlmb_bram_if_cntlr/SLMB"
-            ]
-          },
-          "microblaze_0_ilmb": {
-            "interface_ports": [
-              "ILMB",
-              "ilmb_v10/LMB_M"
-            ]
-          },
           "microblaze_0_dlmb_cntlr": {
             "interface_ports": [
               "dlmb_bram_if_cntlr/BRAM_PORT",
               "lmb_bram/BRAM_PORTA"
             ]
           },
-          "microblaze_0_ilmb_bus": {
+          "microblaze_0_dlmb": {
             "interface_ports": [
-              "ilmb_v10/LMB_Sl_0",
-              "ilmb_bram_if_cntlr/SLMB"
+              "DLMB",
+              "dlmb_v10/LMB_M"
             ]
           },
           "microblaze_0_ilmb_cntlr": {
@@ -1649,10 +1724,22 @@
               "lmb_bram/BRAM_PORTB"
             ]
           },
-          "microblaze_0_dlmb": {
+          "microblaze_0_dlmb_bus": {
             "interface_ports": [
-              "DLMB",
-              "dlmb_v10/LMB_M"
+              "dlmb_v10/LMB_Sl_0",
+              "dlmb_bram_if_cntlr/SLMB"
+            ]
+          },
+          "microblaze_0_ilmb_bus": {
+            "interface_ports": [
+              "ilmb_v10/LMB_Sl_0",
+              "ilmb_bram_if_cntlr/SLMB"
+            ]
+          },
+          "microblaze_0_ilmb": {
+            "interface_ports": [
+              "ILMB",
+              "ilmb_v10/LMB_M"
             ]
           }
         },
@@ -1677,9 +1764,9 @@
           }
         }
       },
-      "clk_wiz_0": {
+      "CLK_Gen": {
         "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-        "xci_name": "MicroBlaze_HBM_Streams_clk_wiz_0_3",
+        "xci_name": "Circular_Buffer_clk_wiz_0_0",
         "parameters": {
           "AUTO_PRIMITIVE": {
             "value": "MMCM"
@@ -1688,22 +1775,22 @@
             "value": "BUFGCE"
           },
           "CLKOUT1_JITTER": {
-            "value": "137.681"
+            "value": "110.209"
           },
           "CLKOUT1_PHASE_ERROR": {
-            "value": "105.461"
+            "value": "98.575"
           },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
-            "value": "100.000"
+            "value": "250.000"
           },
           "CLKOUT2_DRIVES": {
             "value": "BUFGCE"
           },
           "CLKOUT2_JITTER": {
-            "value": "137.681"
+            "value": "130.958"
           },
           "CLKOUT2_PHASE_ERROR": {
-            "value": "105.461"
+            "value": "98.575"
           },
           "CLKOUT2_USED": {
             "value": "true"
@@ -1712,10 +1799,10 @@
             "value": "BUFGCE"
           },
           "CLKOUT3_JITTER": {
-            "value": "103.830"
+            "value": "97.082"
           },
           "CLKOUT3_PHASE_ERROR": {
-            "value": "105.461"
+            "value": "98.575"
           },
           "CLKOUT3_REQUESTED_OUT_FREQ": {
             "value": "450.000"
@@ -1754,13 +1841,13 @@
             "value": "OPTIMIZED"
           },
           "MMCM_CLKFBOUT_MULT_F": {
-            "value": "9.000"
+            "value": "10.000"
           },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "9.000"
+            "value": "4.000"
           },
           "MMCM_CLKOUT1_DIVIDE": {
-            "value": "9"
+            "value": "10"
           },
           "MMCM_CLKOUT2_DIVIDE": {
             "value": "2"
@@ -1794,9 +1881,9 @@
           }
         }
       },
-      "resetn_inv_0": {
+      "resetn_inv": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "MicroBlaze_HBM_Streams_resetn_inv_0_0",
+        "xci_name": "Circular_Buffer_resetn_inv_0_0",
         "parameters": {
           "C_OPERATION": {
             "value": "not"
@@ -1806,13 +1893,13 @@
           }
         }
       },
-      "MB_Debug_0": {
+      "MB_Debug": {
         "vlnv": "user.org:user:MB_Debug:1.0",
-        "xci_name": "MicroBlaze_HBM_Streams_MB_Debug_0_0"
+        "xci_name": "Circular_Buffer_MB_Debug_0_0"
       },
-      "axi_dma_0": {
+      "main_dma": {
         "vlnv": "xilinx.com:ip:axi_dma:7.1",
-        "xci_name": "MicroBlaze_HBM_Streams_axi_dma_0_2",
+        "xci_name": "Circular_Buffer_axi_dma_0_0",
         "parameters": {
           "c_addr_width": {
             "value": "33"
@@ -1849,596 +1936,318 @@
           }
         }
       },
-      "axi_mem_intercon": {
-        "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-        "xci_name": "MicroBlaze_HBM_Streams_axi_mem_intercon_8",
-        "parameters": {
-          "NUM_MI": {
-            "value": "1"
-          }
-        },
-        "interface_ports": {
-          "S00_AXI": {
-            "mode": "Slave",
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
-          },
-          "M00_AXI": {
-            "mode": "Master",
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
-          }
-        },
-        "ports": {
-          "ACLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "ARESETN"
-              }
-            }
-          },
-          "ARESETN": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "S00_ACLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_BUSIF": {
-                "value": "S00_AXI"
-              },
-              "ASSOCIATED_RESET": {
-                "value": "S00_ARESETN"
-              }
-            }
-          },
-          "S00_ARESETN": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "M00_ACLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_BUSIF": {
-                "value": "M00_AXI"
-              },
-              "ASSOCIATED_RESET": {
-                "value": "M00_ARESETN"
-              }
-            }
-          },
-          "M00_ARESETN": {
-            "type": "rst",
-            "direction": "I"
-          }
-        },
-        "components": {
-          "s00_couplers": {
-            "interface_ports": {
-              "M_AXI": {
-                "mode": "Master",
-                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
-              },
-              "S_AXI": {
-                "mode": "Slave",
-                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
-              }
-            },
-            "ports": {
-              "M_ACLK": {
-                "type": "clk",
-                "direction": "I",
-                "parameters": {
-                  "ASSOCIATED_BUSIF": {
-                    "value": "M_AXI"
-                  },
-                  "ASSOCIATED_RESET": {
-                    "value": "M_ARESETN"
-                  }
-                }
-              },
-              "M_ARESETN": {
-                "type": "rst",
-                "direction": "I"
-              },
-              "S_ACLK": {
-                "type": "clk",
-                "direction": "I",
-                "parameters": {
-                  "ASSOCIATED_BUSIF": {
-                    "value": "S_AXI"
-                  },
-                  "ASSOCIATED_RESET": {
-                    "value": "S_ARESETN"
-                  }
-                }
-              },
-              "S_ARESETN": {
-                "type": "rst",
-                "direction": "I"
-              }
-            },
-            "components": {
-              "auto_pc": {
-                "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
-                "xci_name": "MicroBlaze_HBM_Streams_auto_pc_1",
-                "parameters": {
-                  "MI_PROTOCOL": {
-                    "value": "AXI3"
-                  },
-                  "SI_PROTOCOL": {
-                    "value": "AXI4"
-                  }
-                }
-              }
-            },
-            "interface_nets": {
-              "s00_couplers_to_auto_pc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
-              "auto_pc_to_s00_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_pc/M_AXI"
-                ]
-              }
-            },
-            "nets": {
-              "S_ACLK_1": {
-                "ports": [
-                  "S_ACLK",
-                  "auto_pc/aclk"
-                ]
-              },
-              "S_ARESETN_1": {
-                "ports": [
-                  "S_ARESETN",
-                  "auto_pc/aresetn"
-                ]
-              }
-            }
-          }
-        },
-        "interface_nets": {
-          "axi_mem_intercon_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
-          "s00_couplers_to_axi_mem_intercon": {
-            "interface_ports": [
-              "M00_AXI",
-              "s00_couplers/M_AXI"
-            ]
-          }
-        },
-        "nets": {
-          "axi_mem_intercon_ACLK_net": {
-            "ports": [
-              "M00_ACLK",
-              "s00_couplers/M_ACLK"
-            ]
-          },
-          "axi_mem_intercon_ARESETN_net": {
-            "ports": [
-              "M00_ARESETN",
-              "s00_couplers/M_ARESETN"
-            ]
-          },
-          "S00_ACLK_1": {
-            "ports": [
-              "S00_ACLK",
-              "s00_couplers/S_ACLK"
-            ]
-          },
-          "S00_ARESETN_1": {
-            "ports": [
-              "S00_ARESETN",
-              "s00_couplers/S_ARESETN"
-            ]
-          }
-        }
-      },
-      "axi_mem_intercon_1": {
-        "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-        "xci_name": "MicroBlaze_HBM_Streams_axi_mem_intercon_1_1",
-        "parameters": {
-          "NUM_MI": {
-            "value": "1"
-          }
-        },
-        "interface_ports": {
-          "S00_AXI": {
-            "mode": "Slave",
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
-          },
-          "M00_AXI": {
-            "mode": "Master",
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
-          }
-        },
-        "ports": {
-          "ACLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "ARESETN"
-              }
-            }
-          },
-          "ARESETN": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "S00_ACLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_BUSIF": {
-                "value": "S00_AXI"
-              },
-              "ASSOCIATED_RESET": {
-                "value": "S00_ARESETN"
-              }
-            }
-          },
-          "S00_ARESETN": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "M00_ACLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_BUSIF": {
-                "value": "M00_AXI"
-              },
-              "ASSOCIATED_RESET": {
-                "value": "M00_ARESETN"
-              }
-            }
-          },
-          "M00_ARESETN": {
-            "type": "rst",
-            "direction": "I"
-          }
-        },
-        "components": {
-          "s00_couplers": {
-            "interface_ports": {
-              "M_AXI": {
-                "mode": "Master",
-                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
-              },
-              "S_AXI": {
-                "mode": "Slave",
-                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
-              }
-            },
-            "ports": {
-              "M_ACLK": {
-                "type": "clk",
-                "direction": "I",
-                "parameters": {
-                  "ASSOCIATED_BUSIF": {
-                    "value": "M_AXI"
-                  },
-                  "ASSOCIATED_RESET": {
-                    "value": "M_ARESETN"
-                  }
-                }
-              },
-              "M_ARESETN": {
-                "type": "rst",
-                "direction": "I"
-              },
-              "S_ACLK": {
-                "type": "clk",
-                "direction": "I",
-                "parameters": {
-                  "ASSOCIATED_BUSIF": {
-                    "value": "S_AXI"
-                  },
-                  "ASSOCIATED_RESET": {
-                    "value": "S_ARESETN"
-                  }
-                }
-              },
-              "S_ARESETN": {
-                "type": "rst",
-                "direction": "I"
-              }
-            },
-            "components": {
-              "auto_pc": {
-                "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
-                "xci_name": "MicroBlaze_HBM_Streams_auto_pc_2",
-                "parameters": {
-                  "MI_PROTOCOL": {
-                    "value": "AXI3"
-                  },
-                  "SI_PROTOCOL": {
-                    "value": "AXI4"
-                  }
-                }
-              }
-            },
-            "interface_nets": {
-              "auto_pc_to_s00_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_pc/M_AXI"
-                ]
-              },
-              "s00_couplers_to_auto_pc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              }
-            },
-            "nets": {
-              "S_ACLK_1": {
-                "ports": [
-                  "S_ACLK",
-                  "auto_pc/aclk"
-                ]
-              },
-              "S_ARESETN_1": {
-                "ports": [
-                  "S_ARESETN",
-                  "auto_pc/aresetn"
-                ]
-              }
-            }
-          }
-        },
-        "interface_nets": {
-          "s00_couplers_to_axi_mem_intercon_1": {
-            "interface_ports": [
-              "M00_AXI",
-              "s00_couplers/M_AXI"
-            ]
-          },
-          "axi_mem_intercon_1_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          }
-        },
-        "nets": {
-          "axi_mem_intercon_1_ACLK_net": {
-            "ports": [
-              "M00_ACLK",
-              "s00_couplers/M_ACLK"
-            ]
-          },
-          "axi_mem_intercon_1_ARESETN_net": {
-            "ports": [
-              "M00_ARESETN",
-              "s00_couplers/M_ARESETN"
-            ]
-          },
-          "S00_ACLK_1": {
-            "ports": [
-              "S00_ACLK",
-              "s00_couplers/S_ACLK"
-            ]
-          },
-          "S00_ARESETN_1": {
-            "ports": [
-              "S00_ARESETN",
-              "s00_couplers/S_ARESETN"
-            ]
-          }
-        }
-      },
       "Stream_sink_0": {
         "vlnv": "user.org:user:Stream_sink:1.0",
-        "xci_name": "MicroBlaze_HBM_Streams_Stream_sink_0_0"
+        "xci_name": "Circular_Buffer_Stream_sink_0_0"
+      },
+      "axi_dma_0": {
+        "vlnv": "xilinx.com:ip:axi_dma:7.1",
+        "xci_name": "Circular_Buffer_axi_dma_0_1",
+        "parameters": {
+          "c_addr_width": {
+            "value": "33"
+          },
+          "c_include_mm2s": {
+            "value": "1"
+          },
+          "c_include_s2mm": {
+            "value": "1"
+          },
+          "c_include_s2mm_dre": {
+            "value": "0"
+          },
+          "c_include_sg": {
+            "value": "0"
+          },
+          "c_m_axi_mm2s_data_width": {
+            "value": "256"
+          },
+          "c_m_axi_s2mm_data_width": {
+            "value": "256"
+          },
+          "c_m_axis_mm2s_tdata_width": {
+            "value": "256"
+          },
+          "c_mm2s_burst_size": {
+            "value": "16"
+          },
+          "c_s_axis_s2mm_tdata_width": {
+            "value": "256"
+          },
+          "c_sg_length_width": {
+            "value": "24"
+          }
+        }
+      },
+      "axis_data_fifo_0": {
+        "vlnv": "xilinx.com:ip:axis_data_fifo:2.0",
+        "xci_name": "Circular_Buffer_axis_data_fifo_0_0"
+      },
+      "axi_protocol_convert_0": {
+        "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
+        "xci_name": "Circular_Buffer_axi_protocol_convert_0_0"
+      },
+      "axi_protocol_convert_1": {
+        "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
+        "xci_name": "Circular_Buffer_axi_protocol_convert_0_1"
+      },
+      "axi_protocol_convert_2": {
+        "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
+        "xci_name": "Circular_Buffer_axi_protocol_convert_1_0"
+      },
+      "axi_protocol_convert_3": {
+        "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
+        "xci_name": "Circular_Buffer_axi_protocol_convert_1_1"
       }
     },
     "interface_nets": {
+      "axi_dma_0_M_AXI_S2MM": {
+        "interface_ports": [
+          "main_dma/M_AXI_S2MM",
+          "axi_protocol_convert_1/S_AXI"
+        ]
+      },
+      "axi_dma_1_M_AXI_S2MM": {
+        "interface_ports": [
+          "axi_dma_0/M_AXI_S2MM",
+          "axi_protocol_convert_2/S_AXI"
+        ]
+      },
+      "axi_protocol_convert_2_M_AXI": {
+        "interface_ports": [
+          "axi_protocol_convert_2/M_AXI",
+          "HBM/SAXI_17"
+        ]
+      },
+      "axi_dma_1_M_AXIS_MM2S": {
+        "interface_ports": [
+          "axi_dma_0/M_AXIS_MM2S",
+          "axis_data_fifo_0/S_AXIS"
+        ]
+      },
+      "axis_data_fifo_0_M_AXIS": {
+        "interface_ports": [
+          "axis_data_fifo_0/M_AXIS",
+          "axi_dma_0/S_AXIS_S2MM"
+        ]
+      },
+      "microblaze_0_axi_periph_M03_AXI": {
+        "interface_ports": [
+          "MBlaze_Interconnect/M03_AXI",
+          "axi_dma_0/S_AXI_LITE"
+        ]
+      },
+      "axi_protocol_convert_3_M_AXI": {
+        "interface_ports": [
+          "axi_protocol_convert_3/M_AXI",
+          "HBM/SAXI_01"
+        ]
+      },
+      "microblaze_0_M_AXI_DP": {
+        "interface_ports": [
+          "MB_controller/M_AXI_DP",
+          "MBlaze_Interconnect/S00_AXI"
+        ]
+      },
+      "microblaze_0_dlmb_1": {
+        "interface_ports": [
+          "MB_controller/DLMB",
+          "microblaze_0_local_memory/DLMB"
+        ]
+      },
+      "axi_traffic_gen_0_M_AXIS_MASTER": {
+        "interface_ports": [
+          "traffic_gen/M_AXIS_MASTER",
+          "main_dma/S_AXIS_S2MM"
+        ]
+      },
       "microblaze_0_ilmb_1": {
         "interface_ports": [
-          "microblaze_0/ILMB",
+          "MB_controller/ILMB",
           "microblaze_0_local_memory/ILMB"
         ]
       },
-      "microblaze_0_axi_periph_M01_AXI": {
+      "microblaze_0_axi_periph_M02_AXI": {
         "interface_ports": [
-          "microblaze_0_axi_periph/M01_AXI",
-          "axi_traffic_gen_0/S_AXI"
+          "MBlaze_Interconnect/M02_AXI",
+          "MB_Debug/S00_AXI_input"
+        ]
+      },
+      "microblaze_0_axi_periph_M00_AXI": {
+        "interface_ports": [
+          "MBlaze_Interconnect/M00_AXI",
+          "main_dma/S_AXI_LITE"
+        ]
+      },
+      "axi_dma_0_M_AXIS_MM2S": {
+        "interface_ports": [
+          "main_dma/M_AXIS_MM2S",
+          "Stream_sink_0/S00_AXIS"
         ]
       },
       "sysclk0_1": {
         "interface_ports": [
           "sysclk0",
-          "clk_wiz_0/CLK_IN1_D"
+          "CLK_Gen/CLK_IN1_D"
         ]
       },
-      "microblaze_0_dlmb_1": {
+      "microblaze_0_axi_periph_M01_AXI": {
         "interface_ports": [
-          "microblaze_0/DLMB",
-          "microblaze_0_local_memory/DLMB"
+          "MBlaze_Interconnect/M01_AXI",
+          "traffic_gen/S_AXI"
         ]
       },
-      "microblaze_0_axi_periph_M00_AXI": {
+      "axi_dma_1_M_AXI_MM2S": {
         "interface_ports": [
-          "microblaze_0_axi_periph/M00_AXI",
-          "axi_dma_0/S_AXI_LITE"
+          "axi_dma_0/M_AXI_MM2S",
+          "axi_protocol_convert_3/S_AXI"
         ]
       },
-      "axi_traffic_gen_0_M_AXIS_MASTER": {
+      "axi_protocol_convert_1_M_AXI": {
         "interface_ports": [
-          "axi_traffic_gen_0/M_AXIS_MASTER",
-          "axi_dma_0/S_AXIS_S2MM"
-        ]
-      },
-      "microblaze_0_M_AXI_DP": {
-        "interface_ports": [
-          "microblaze_0/M_AXI_DP",
-          "microblaze_0_axi_periph/S00_AXI"
-        ]
-      },
-      "microblaze_0_axi_periph_M02_AXI": {
-        "interface_ports": [
-          "microblaze_0_axi_periph/M02_AXI",
-          "MB_Debug_0/S00_AXI_input"
-        ]
-      },
-      "axi_dma_0_M_AXIS_MM2S": {
-        "interface_ports": [
-          "axi_dma_0/M_AXIS_MM2S",
-          "Stream_sink_0/S00_AXIS"
-        ]
-      },
-      "axi_mem_intercon_1_M00_AXI": {
-        "interface_ports": [
-          "axi_mem_intercon_1/M00_AXI",
-          "hbm_0/SAXI_01"
-        ]
-      },
-      "axi_dma_0_M_AXI_S2MM": {
-        "interface_ports": [
-          "axi_dma_0/M_AXI_S2MM",
-          "axi_mem_intercon_1/S00_AXI"
+          "axi_protocol_convert_1/M_AXI",
+          "HBM/SAXI_00"
         ]
       },
       "axi_dma_0_M_AXI_MM2S": {
         "interface_ports": [
-          "axi_dma_0/M_AXI_MM2S",
-          "axi_mem_intercon/S00_AXI"
+          "main_dma/M_AXI_MM2S",
+          "axi_protocol_convert_0/S_AXI"
         ]
       },
-      "axi_mem_intercon_M00_AXI": {
+      "axi_protocol_convert_0_M_AXI": {
         "interface_ports": [
-          "axi_mem_intercon/M00_AXI",
-          "hbm_0/SAXI_00"
+          "axi_protocol_convert_0/M_AXI",
+          "HBM/SAXI_16"
         ]
       }
     },
     "nets": {
       "rst_Clk_100M_peripheral_aresetn": {
         "ports": [
-          "rst_Clk_100M/peripheral_aresetn",
-          "axi_traffic_gen_0/s_axi_aresetn",
-          "microblaze_0_axi_periph/S00_ARESETN",
-          "microblaze_0_axi_periph/M00_ARESETN",
-          "microblaze_0_axi_periph/ARESETN",
-          "microblaze_0_axi_periph/M01_ARESETN",
-          "hbm_0/AXI_00_ARESET_N",
-          "hbm_0/APB_0_PRESET_N",
-          "MB_Debug_0/s00_axi_input_aresetn",
+          "reset_gen/peripheral_aresetn",
+          "traffic_gen/s_axi_aresetn",
+          "MBlaze_Interconnect/S00_ARESETN",
+          "MBlaze_Interconnect/M00_ARESETN",
+          "MBlaze_Interconnect/ARESETN",
+          "MBlaze_Interconnect/M01_ARESETN",
+          "HBM/AXI_00_ARESET_N",
+          "HBM/APB_0_PRESET_N",
+          "MB_Debug/s00_axi_input_aresetn",
+          "main_dma/axi_resetn",
+          "HBM/AXI_01_ARESET_N",
+          "MBlaze_Interconnect/M02_ARESETN",
+          "HBM/APB_1_PRESET_N",
+          "Stream_sink_0/s00_axis_aresetn",
           "axi_dma_0/axi_resetn",
-          "hbm_0/AXI_01_ARESET_N",
-          "microblaze_0_axi_periph/M02_ARESETN",
-          "hbm_0/APB_1_PRESET_N",
-          "axi_mem_intercon/S00_ARESETN",
-          "axi_mem_intercon/M00_ARESETN",
-          "axi_mem_intercon/ARESETN",
-          "axi_mem_intercon_1/S00_ARESETN",
-          "axi_mem_intercon_1/M00_ARESETN",
-          "axi_mem_intercon_1/ARESETN",
-          "Stream_sink_0/s00_axis_aresetn"
+          "MBlaze_Interconnect/M03_ARESETN",
+          "axis_data_fifo_0/s_axis_aresetn",
+          "axi_protocol_convert_0/aresetn",
+          "axi_protocol_convert_1/aresetn",
+          "axi_protocol_convert_2/aresetn",
+          "axi_protocol_convert_3/aresetn",
+          "HBM/AXI_16_ARESET_N",
+          "HBM/AXI_17_ARESET_N"
         ]
       },
       "resetn_1": {
         "ports": [
           "resetn",
-          "rst_Clk_100M/ext_reset_in",
-          "resetn_inv_0/Op1"
+          "reset_gen/ext_reset_in",
+          "resetn_inv/Op1"
         ]
       },
       "core_ext_start_0_1": {
         "ports": [
           "core_ext_start_0",
-          "axi_traffic_gen_0/core_ext_start"
+          "traffic_gen/core_ext_start"
         ]
       },
       "core_ext_stop_0_1": {
         "ports": [
           "core_ext_stop_0",
-          "axi_traffic_gen_0/core_ext_stop"
+          "traffic_gen/core_ext_stop"
         ]
       },
       "rst_Clk_100M_mb_reset": {
         "ports": [
-          "rst_Clk_100M/mb_reset",
-          "microblaze_0/Reset",
+          "reset_gen/mb_reset",
+          "MB_controller/Reset",
           "microblaze_0_local_memory/SYS_Rst"
         ]
       },
       "resetn_inv_0_Res": {
         "ports": [
-          "resetn_inv_0/Res",
-          "clk_wiz_0/reset"
+          "resetn_inv/Res",
+          "CLK_Gen/reset"
         ]
       },
       "clk_wiz_0_clk_out2": {
         "ports": [
-          "clk_wiz_0/APB_clk",
-          "hbm_0/APB_0_PCLK",
-          "hbm_0/APB_1_PCLK"
+          "CLK_Gen/APB_clk",
+          "HBM/APB_0_PCLK",
+          "HBM/APB_1_PCLK"
         ]
       },
       "clk_wiz_0_main_clk": {
         "ports": [
-          "clk_wiz_0/main_clk",
-          "axi_dma_0/m_axi_mm2s_aclk",
-          "axi_mem_intercon/S00_ACLK",
+          "CLK_Gen/main_clk",
+          "main_dma/m_axi_mm2s_aclk",
           "Stream_sink_0/s00_axis_aclk",
-          "axi_dma_0/m_axi_s2mm_aclk",
-          "axi_mem_intercon_1/S00_ACLK",
-          "axi_traffic_gen_0/s_axi_aclk",
-          "axi_dma_0/s_axi_lite_aclk",
-          "microblaze_0_axi_periph/M00_ACLK",
-          "axi_mem_intercon/ACLK",
-          "axi_mem_intercon/M00_ACLK",
-          "hbm_0/AXI_00_ACLK",
-          "axi_mem_intercon_1/ACLK",
-          "axi_mem_intercon_1/M00_ACLK",
-          "hbm_0/AXI_01_ACLK",
-          "hbm_0/HBM_REF_CLK_0",
-          "hbm_0/HBM_REF_CLK_1",
-          "MB_Debug_0/s00_axi_input_aclk",
-          "microblaze_0_axi_periph/M02_ACLK",
-          "microblaze_0/Clk",
+          "main_dma/m_axi_s2mm_aclk",
+          "traffic_gen/s_axi_aclk",
+          "main_dma/s_axi_lite_aclk",
+          "MBlaze_Interconnect/M00_ACLK",
+          "HBM/AXI_00_ACLK",
+          "HBM/AXI_01_ACLK",
+          "HBM/HBM_REF_CLK_0",
+          "HBM/HBM_REF_CLK_1",
+          "MB_Debug/s00_axi_input_aclk",
+          "MBlaze_Interconnect/M02_ACLK",
+          "MB_controller/Clk",
           "microblaze_0_local_memory/Clk",
-          "microblaze_0_axi_periph/S00_ACLK",
-          "microblaze_0_axi_periph/ACLK",
-          "microblaze_0_axi_periph/M01_ACLK",
-          "rst_Clk_100M/slowest_sync_clk"
+          "MBlaze_Interconnect/S00_ACLK",
+          "MBlaze_Interconnect/ACLK",
+          "MBlaze_Interconnect/M01_ACLK",
+          "reset_gen/slowest_sync_clk",
+          "axi_dma_0/m_axi_mm2s_aclk",
+          "axi_dma_0/m_axi_s2mm_aclk",
+          "axi_dma_0/s_axi_lite_aclk",
+          "MBlaze_Interconnect/M03_ACLK",
+          "axis_data_fifo_0/s_axis_aclk",
+          "axi_protocol_convert_0/aclk",
+          "axi_protocol_convert_1/aclk",
+          "axi_protocol_convert_2/aclk",
+          "axi_protocol_convert_3/aclk",
+          "HBM/AXI_16_ACLK",
+          "HBM/AXI_17_ACLK"
         ]
       }
     },
     "addressing": {
-      "/microblaze_0": {
+      "/MB_controller": {
         "address_spaces": {
           "Data": {
             "range": "4G",
             "width": "32",
             "segments": {
               "SEG_MB_Debug_0_S00_AXI_input_reg": {
-                "address_block": "/MB_Debug_0/S00_AXI_input/S00_AXI_input_reg",
+                "address_block": "/MB_Debug/S00_AXI_input/S00_AXI_input_reg",
                 "offset": "0x44A20000",
                 "range": "64K"
               },
               "SEG_axi_dma_0_Reg": {
-                "address_block": "/axi_dma_0/S_AXI_LITE/Reg",
+                "address_block": "/main_dma/S_AXI_LITE/Reg",
                 "offset": "0x41E00000",
                 "range": "64K"
               },
+              "SEG_axi_dma_1_Reg": {
+                "address_block": "/axi_dma_0/S_AXI_LITE/Reg",
+                "offset": "0x41E10000",
+                "range": "64K"
+              },
               "SEG_axi_traffic_gen_0_Reg0": {
-                "address_block": "/axi_traffic_gen_0/S_AXI/Reg0",
+                "address_block": "/traffic_gen/S_AXI/Reg0",
                 "offset": "0x44A00000",
                 "range": "64K"
               },
@@ -2462,169 +2271,169 @@
           }
         }
       },
-      "/axi_dma_0": {
+      "/main_dma": {
         "address_spaces": {
           "Data_MM2S": {
             "range": "8G",
             "width": "32",
             "segments": {
-              "SEG_hbm_0_HBM_MEM00": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM00",
+              "SEG_HBM_HBM_MEM00": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM00",
                 "offset": "0x008000000",
                 "range": "128M"
               },
-              "SEG_hbm_0_HBM_MEM01": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM01",
+              "SEG_HBM_HBM_MEM01": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM01",
                 "offset": "0x010000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM02": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM02",
+              "SEG_HBM_HBM_MEM02": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM02",
                 "offset": "0x020000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM03": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM03",
+              "SEG_HBM_HBM_MEM03": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM03",
                 "offset": "0x030000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM04": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM04",
+              "SEG_HBM_HBM_MEM04": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM04",
                 "offset": "0x040000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM05": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM05",
+              "SEG_HBM_HBM_MEM05": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM05",
                 "offset": "0x050000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM06": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM06",
+              "SEG_HBM_HBM_MEM06": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM06",
                 "offset": "0x060000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM07": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM07",
+              "SEG_HBM_HBM_MEM07": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM07",
                 "offset": "0x070000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM08": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM08",
+              "SEG_HBM_HBM_MEM08": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM08",
                 "offset": "0x080000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM09": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM09",
+              "SEG_HBM_HBM_MEM09": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM09",
                 "offset": "0x090000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM10": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM10",
+              "SEG_HBM_HBM_MEM10": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM10",
                 "offset": "0x0A0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM11": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM11",
+              "SEG_HBM_HBM_MEM11": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM11",
                 "offset": "0x0B0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM12": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM12",
+              "SEG_HBM_HBM_MEM12": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM12",
                 "offset": "0x0C0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM13": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM13",
+              "SEG_HBM_HBM_MEM13": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM13",
                 "offset": "0x0D0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM14": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM14",
+              "SEG_HBM_HBM_MEM14": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM14",
                 "offset": "0x0E0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM15": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM15",
+              "SEG_HBM_HBM_MEM15": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM15",
                 "offset": "0x0F0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM16": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM16",
+              "SEG_HBM_HBM_MEM16": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM16",
                 "offset": "0x100000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM17": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM17",
+              "SEG_HBM_HBM_MEM17": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM17",
                 "offset": "0x110000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM18": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM18",
+              "SEG_HBM_HBM_MEM18": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM18",
                 "offset": "0x120000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM19": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM19",
+              "SEG_HBM_HBM_MEM19": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM19",
                 "offset": "0x130000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM20": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM20",
+              "SEG_HBM_HBM_MEM20": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM20",
                 "offset": "0x140000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM21": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM21",
+              "SEG_HBM_HBM_MEM21": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM21",
                 "offset": "0x150000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM22": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM22",
+              "SEG_HBM_HBM_MEM22": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM22",
                 "offset": "0x160000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM23": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM23",
+              "SEG_HBM_HBM_MEM23": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM23",
                 "offset": "0x170000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM24": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM24",
+              "SEG_HBM_HBM_MEM24": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM24",
                 "offset": "0x180000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM25": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM25",
+              "SEG_HBM_HBM_MEM25": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM25",
                 "offset": "0x190000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM26": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM26",
+              "SEG_HBM_HBM_MEM26": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM26",
                 "offset": "0x1A0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM27": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM27",
+              "SEG_HBM_HBM_MEM27": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM27",
                 "offset": "0x1B0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM28": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM28",
+              "SEG_HBM_HBM_MEM28": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM28",
                 "offset": "0x1C0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM29": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM29",
+              "SEG_HBM_HBM_MEM29": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM29",
                 "offset": "0x1D0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM30": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM30",
+              "SEG_HBM_HBM_MEM30": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM30",
                 "offset": "0x1E0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM31": {
-                "address_block": "/hbm_0/SAXI_00/HBM_MEM31",
+              "SEG_HBM_HBM_MEM31": {
+                "address_block": "/HBM/SAXI_16/HBM_MEM31",
                 "offset": "0x1F0000000",
                 "range": "256M"
               }
@@ -2634,163 +2443,499 @@
             "range": "8G",
             "width": "32",
             "segments": {
-              "SEG_hbm_0_HBM_MEM00": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM00",
+              "SEG_HBM_HBM_MEM00": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM00",
                 "offset": "0x008000000",
                 "range": "128M"
               },
-              "SEG_hbm_0_HBM_MEM01": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM01",
+              "SEG_HBM_HBM_MEM01": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM01",
                 "offset": "0x010000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM02": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM02",
+              "SEG_HBM_HBM_MEM02": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM02",
                 "offset": "0x020000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM03": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM03",
+              "SEG_HBM_HBM_MEM03": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM03",
                 "offset": "0x030000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM04": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM04",
+              "SEG_HBM_HBM_MEM04": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM04",
                 "offset": "0x040000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM05": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM05",
+              "SEG_HBM_HBM_MEM05": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM05",
                 "offset": "0x050000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM06": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM06",
+              "SEG_HBM_HBM_MEM06": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM06",
                 "offset": "0x060000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM07": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM07",
+              "SEG_HBM_HBM_MEM07": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM07",
                 "offset": "0x070000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM08": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM08",
+              "SEG_HBM_HBM_MEM08": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM08",
                 "offset": "0x080000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM09": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM09",
+              "SEG_HBM_HBM_MEM09": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM09",
                 "offset": "0x090000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM10": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM10",
+              "SEG_HBM_HBM_MEM10": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM10",
                 "offset": "0x0A0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM11": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM11",
+              "SEG_HBM_HBM_MEM11": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM11",
                 "offset": "0x0B0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM12": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM12",
+              "SEG_HBM_HBM_MEM12": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM12",
                 "offset": "0x0C0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM13": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM13",
+              "SEG_HBM_HBM_MEM13": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM13",
                 "offset": "0x0D0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM14": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM14",
+              "SEG_HBM_HBM_MEM14": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM14",
                 "offset": "0x0E0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM15": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM15",
+              "SEG_HBM_HBM_MEM15": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM15",
                 "offset": "0x0F0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM16": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM16",
+              "SEG_HBM_HBM_MEM16": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM16",
                 "offset": "0x100000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM17": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM17",
+              "SEG_HBM_HBM_MEM17": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM17",
                 "offset": "0x110000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM18": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM18",
+              "SEG_HBM_HBM_MEM18": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM18",
                 "offset": "0x120000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM19": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM19",
+              "SEG_HBM_HBM_MEM19": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM19",
                 "offset": "0x130000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM20": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM20",
+              "SEG_HBM_HBM_MEM20": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM20",
                 "offset": "0x140000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM21": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM21",
+              "SEG_HBM_HBM_MEM21": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM21",
                 "offset": "0x150000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM22": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM22",
+              "SEG_HBM_HBM_MEM22": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM22",
                 "offset": "0x160000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM23": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM23",
+              "SEG_HBM_HBM_MEM23": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM23",
                 "offset": "0x170000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM24": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM24",
+              "SEG_HBM_HBM_MEM24": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM24",
                 "offset": "0x180000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM25": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM25",
+              "SEG_HBM_HBM_MEM25": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM25",
                 "offset": "0x190000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM26": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM26",
+              "SEG_HBM_HBM_MEM26": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM26",
                 "offset": "0x1A0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM27": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM27",
+              "SEG_HBM_HBM_MEM27": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM27",
                 "offset": "0x1B0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM28": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM28",
+              "SEG_HBM_HBM_MEM28": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM28",
                 "offset": "0x1C0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM29": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM29",
+              "SEG_HBM_HBM_MEM29": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM29",
                 "offset": "0x1D0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM30": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM30",
+              "SEG_HBM_HBM_MEM30": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM30",
                 "offset": "0x1E0000000",
                 "range": "256M"
               },
-              "SEG_hbm_0_HBM_MEM31": {
-                "address_block": "/hbm_0/SAXI_01/HBM_MEM31",
+              "SEG_HBM_HBM_MEM31": {
+                "address_block": "/HBM/SAXI_00/HBM_MEM31",
+                "offset": "0x1F0000000",
+                "range": "256M"
+              }
+            }
+          }
+        }
+      },
+      "/axi_dma_0": {
+        "address_spaces": {
+          "Data_MM2S": {
+            "range": "8G",
+            "width": "32",
+            "segments": {
+              "SEG_HBM_HBM_MEM00": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM00",
+                "offset": "0x008000000",
+                "range": "128M"
+              },
+              "SEG_HBM_HBM_MEM01": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM01",
+                "offset": "0x010000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM02": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM02",
+                "offset": "0x020000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM03": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM03",
+                "offset": "0x030000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM04": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM04",
+                "offset": "0x040000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM05": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM05",
+                "offset": "0x050000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM06": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM06",
+                "offset": "0x060000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM07": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM07",
+                "offset": "0x070000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM08": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM08",
+                "offset": "0x080000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM09": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM09",
+                "offset": "0x090000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM10": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM10",
+                "offset": "0x0A0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM11": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM11",
+                "offset": "0x0B0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM12": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM12",
+                "offset": "0x0C0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM13": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM13",
+                "offset": "0x0D0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM14": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM14",
+                "offset": "0x0E0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM15": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM15",
+                "offset": "0x0F0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM16": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM16",
+                "offset": "0x100000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM17": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM17",
+                "offset": "0x110000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM18": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM18",
+                "offset": "0x120000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM19": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM19",
+                "offset": "0x130000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM20": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM20",
+                "offset": "0x140000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM21": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM21",
+                "offset": "0x150000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM22": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM22",
+                "offset": "0x160000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM23": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM23",
+                "offset": "0x170000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM24": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM24",
+                "offset": "0x180000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM25": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM25",
+                "offset": "0x190000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM26": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM26",
+                "offset": "0x1A0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM27": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM27",
+                "offset": "0x1B0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM28": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM28",
+                "offset": "0x1C0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM29": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM29",
+                "offset": "0x1D0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM30": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM30",
+                "offset": "0x1E0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM31": {
+                "address_block": "/HBM/SAXI_01/HBM_MEM31",
+                "offset": "0x1F0000000",
+                "range": "256M"
+              }
+            }
+          },
+          "Data_S2MM": {
+            "range": "8G",
+            "width": "32",
+            "segments": {
+              "SEG_HBM_HBM_MEM00": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM00",
+                "offset": "0x008000000",
+                "range": "128M"
+              },
+              "SEG_HBM_HBM_MEM01": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM01",
+                "offset": "0x010000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM02": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM02",
+                "offset": "0x020000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM03": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM03",
+                "offset": "0x030000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM04": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM04",
+                "offset": "0x040000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM05": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM05",
+                "offset": "0x050000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM06": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM06",
+                "offset": "0x060000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM07": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM07",
+                "offset": "0x070000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM08": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM08",
+                "offset": "0x080000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM09": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM09",
+                "offset": "0x090000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM10": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM10",
+                "offset": "0x0A0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM11": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM11",
+                "offset": "0x0B0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM12": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM12",
+                "offset": "0x0C0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM13": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM13",
+                "offset": "0x0D0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM14": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM14",
+                "offset": "0x0E0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM15": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM15",
+                "offset": "0x0F0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM16": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM16",
+                "offset": "0x100000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM17": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM17",
+                "offset": "0x110000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM18": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM18",
+                "offset": "0x120000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM19": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM19",
+                "offset": "0x130000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM20": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM20",
+                "offset": "0x140000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM21": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM21",
+                "offset": "0x150000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM22": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM22",
+                "offset": "0x160000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM23": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM23",
+                "offset": "0x170000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM24": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM24",
+                "offset": "0x180000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM25": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM25",
+                "offset": "0x190000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM26": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM26",
+                "offset": "0x1A0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM27": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM27",
+                "offset": "0x1B0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM28": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM28",
+                "offset": "0x1C0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM29": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM29",
+                "offset": "0x1D0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM30": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM30",
+                "offset": "0x1E0000000",
+                "range": "256M"
+              },
+              "SEG_HBM_HBM_MEM31": {
+                "address_block": "/HBM/SAXI_17/HBM_MEM31",
                 "offset": "0x1F0000000",
                 "range": "256M"
               }

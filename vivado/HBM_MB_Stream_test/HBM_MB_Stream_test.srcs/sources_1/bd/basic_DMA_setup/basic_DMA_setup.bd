@@ -3,7 +3,7 @@
     "design_info": {
       "boundary_crc": "0x23EE78C00DD5BBA3",
       "device": "xcu280-fsvh2892-2L-e",
-      "name": "MicroBlaze_HBM_Streams",
+      "name": "basic_DMA_setup",
       "synth_flow_mode": "None",
       "tool_version": "2019.2.1",
       "validated": "true"
@@ -84,7 +84,7 @@
     "components": {
       "hbm_0": {
         "vlnv": "xilinx.com:ip:hbm:1.0",
-        "xci_name": "MicroBlaze_HBM_Streams_hbm_0_0",
+        "xci_name": "basic_DMA_setup_hbm_0_0",
         "parameters": {
           "HBM_MMCM1_FBOUT_MULT0": {
             "value": "18"
@@ -993,7 +993,7 @@
       },
       "axi_traffic_gen_0": {
         "vlnv": "xilinx.com:ip:axi_traffic_gen:3.0",
-        "xci_name": "MicroBlaze_HBM_Streams_axi_traffic_gen_0_0",
+        "xci_name": "basic_DMA_setup_axi_traffic_gen_0_0",
         "parameters": {
           "ATG_OPTIONS": {
             "value": "Custom"
@@ -1038,7 +1038,7 @@
       },
       "rst_Clk_100M": {
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "xci_name": "MicroBlaze_HBM_Streams_rst_Clk_100M_0",
+        "xci_name": "basic_DMA_setup_rst_Clk_100M_0",
         "parameters": {
           "RESET_BOARD_INTERFACE": {
             "value": "resetn"
@@ -1050,7 +1050,7 @@
       },
       "microblaze_0_axi_periph": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-        "xci_name": "MicroBlaze_HBM_Streams_microblaze_0_axi_periph_1",
+        "xci_name": "basic_DMA_setup_microblaze_0_axi_periph_0",
         "parameters": {
           "NUM_MI": {
             "value": "3"
@@ -1156,7 +1156,7 @@
         "components": {
           "xbar": {
             "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
-            "xci_name": "MicroBlaze_HBM_Streams_xbar_2",
+            "xci_name": "basic_DMA_setup_xbar_0",
             "parameters": {
               "NUM_MI": {
                 "value": "3"
@@ -1325,7 +1325,7 @@
             "components": {
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
-                "xci_name": "MicroBlaze_HBM_Streams_auto_pc_0",
+                "xci_name": "basic_DMA_setup_auto_pc_0",
                 "parameters": {
                   "MI_PROTOCOL": {
                     "value": "AXI4"
@@ -1337,16 +1337,16 @@
               }
             },
             "interface_nets": {
-              "auto_pc_to_m01_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_pc/M_AXI"
-                ]
-              },
               "m01_couplers_to_auto_pc": {
                 "interface_ports": [
                   "S_AXI",
                   "auto_pc/S_AXI"
+                ]
+              },
+              "auto_pc_to_m01_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
                 ]
               }
             },
@@ -1421,30 +1421,6 @@
           }
         },
         "interface_nets": {
-          "m02_couplers_to_microblaze_0_axi_periph": {
-            "interface_ports": [
-              "M02_AXI",
-              "m02_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m02_couplers": {
-            "interface_ports": [
-              "xbar/M02_AXI",
-              "m02_couplers/S_AXI"
-            ]
-          },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
-            ]
-          },
-          "m01_couplers_to_microblaze_0_axi_periph": {
-            "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
-            ]
-          },
           "s00_couplers_to_xbar": {
             "interface_ports": [
               "s00_couplers/M_AXI",
@@ -1467,6 +1443,30 @@
             "interface_ports": [
               "M00_AXI",
               "m00_couplers/M_AXI"
+            ]
+          },
+          "m01_couplers_to_microblaze_0_axi_periph": {
+            "interface_ports": [
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
+            ]
+          },
+          "m02_couplers_to_microblaze_0_axi_periph": {
+            "interface_ports": [
+              "M02_AXI",
+              "m02_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
             ]
           }
         },
@@ -1503,7 +1503,7 @@
       },
       "microblaze_0": {
         "vlnv": "xilinx.com:ip:microblaze:11.0",
-        "xci_name": "MicroBlaze_HBM_Streams_microblaze_0_2",
+        "xci_name": "basic_DMA_setup_microblaze_0_0",
         "parameters": {
           "C_ADDR_TAG_BITS": {
             "value": "0"
@@ -1538,7 +1538,7 @@
         },
         "hdl_attributes": {
           "BMM_INFO_PROCESSOR": {
-            "value": "microblaze-le > MicroBlaze_HBM_Streams microblaze_0_local_memory/dlmb_bram_if_cntlr",
+            "value": "microblaze-le > basic_DMA_setup microblaze_0_local_memory/dlmb_bram_if_cntlr",
             "value_src": "default"
           },
           "KEEP_HIERARCHY": {
@@ -1571,15 +1571,15 @@
         "components": {
           "dlmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
-            "xci_name": "MicroBlaze_HBM_Streams_dlmb_v10_1"
+            "xci_name": "basic_DMA_setup_dlmb_v10_0"
           },
           "ilmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
-            "xci_name": "MicroBlaze_HBM_Streams_ilmb_v10_1"
+            "xci_name": "basic_DMA_setup_ilmb_v10_0"
           },
           "dlmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
-            "xci_name": "MicroBlaze_HBM_Streams_dlmb_bram_if_cntlr_1",
+            "xci_name": "basic_DMA_setup_dlmb_bram_if_cntlr_0",
             "parameters": {
               "C_ECC": {
                 "value": "0"
@@ -1587,7 +1587,7 @@
             },
             "hdl_attributes": {
               "BMM_INFO_ADDRESS_SPACE": {
-                "value": "byte  0x00000000 32 > MicroBlaze_HBM_Streams microblaze_0_local_memory/lmb_bram",
+                "value": "byte  0x00000000 32 > basic_DMA_setup microblaze_0_local_memory/lmb_bram",
                 "value_src": "default"
               },
               "KEEP_HIERARCHY": {
@@ -1598,7 +1598,7 @@
           },
           "ilmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
-            "xci_name": "MicroBlaze_HBM_Streams_ilmb_bram_if_cntlr_1",
+            "xci_name": "basic_DMA_setup_ilmb_bram_if_cntlr_0",
             "parameters": {
               "C_ECC": {
                 "value": "0"
@@ -1607,7 +1607,7 @@
           },
           "lmb_bram": {
             "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-            "xci_name": "MicroBlaze_HBM_Streams_lmb_bram_1",
+            "xci_name": "basic_DMA_setup_lmb_bram_0",
             "parameters": {
               "Memory_Type": {
                 "value": "True_Dual_Port_RAM"
@@ -1625,6 +1625,12 @@
               "dlmb_bram_if_cntlr/SLMB"
             ]
           },
+          "microblaze_0_ilmb_bus": {
+            "interface_ports": [
+              "ilmb_v10/LMB_Sl_0",
+              "ilmb_bram_if_cntlr/SLMB"
+            ]
+          },
           "microblaze_0_ilmb": {
             "interface_ports": [
               "ILMB",
@@ -1637,22 +1643,16 @@
               "lmb_bram/BRAM_PORTA"
             ]
           },
-          "microblaze_0_ilmb_bus": {
+          "microblaze_0_dlmb": {
             "interface_ports": [
-              "ilmb_v10/LMB_Sl_0",
-              "ilmb_bram_if_cntlr/SLMB"
+              "DLMB",
+              "dlmb_v10/LMB_M"
             ]
           },
           "microblaze_0_ilmb_cntlr": {
             "interface_ports": [
               "ilmb_bram_if_cntlr/BRAM_PORT",
               "lmb_bram/BRAM_PORTB"
-            ]
-          },
-          "microblaze_0_dlmb": {
-            "interface_ports": [
-              "DLMB",
-              "dlmb_v10/LMB_M"
             ]
           }
         },
@@ -1679,7 +1679,7 @@
       },
       "clk_wiz_0": {
         "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-        "xci_name": "MicroBlaze_HBM_Streams_clk_wiz_0_3",
+        "xci_name": "basic_DMA_setup_clk_wiz_0_0",
         "parameters": {
           "AUTO_PRIMITIVE": {
             "value": "MMCM"
@@ -1796,7 +1796,7 @@
       },
       "resetn_inv_0": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "MicroBlaze_HBM_Streams_resetn_inv_0_0",
+        "xci_name": "basic_DMA_setup_resetn_inv_0_0",
         "parameters": {
           "C_OPERATION": {
             "value": "not"
@@ -1808,11 +1808,11 @@
       },
       "MB_Debug_0": {
         "vlnv": "user.org:user:MB_Debug:1.0",
-        "xci_name": "MicroBlaze_HBM_Streams_MB_Debug_0_0"
+        "xci_name": "basic_DMA_setup_MB_Debug_0_0"
       },
       "axi_dma_0": {
         "vlnv": "xilinx.com:ip:axi_dma:7.1",
-        "xci_name": "MicroBlaze_HBM_Streams_axi_dma_0_2",
+        "xci_name": "basic_DMA_setup_axi_dma_0_0",
         "parameters": {
           "c_addr_width": {
             "value": "33"
@@ -1851,7 +1851,7 @@
       },
       "axi_mem_intercon": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-        "xci_name": "MicroBlaze_HBM_Streams_axi_mem_intercon_8",
+        "xci_name": "basic_DMA_setup_axi_mem_intercon_0",
         "parameters": {
           "NUM_MI": {
             "value": "1"
@@ -1963,7 +1963,7 @@
             "components": {
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
-                "xci_name": "MicroBlaze_HBM_Streams_auto_pc_1",
+                "xci_name": "basic_DMA_setup_auto_pc_1",
                 "parameters": {
                   "MI_PROTOCOL": {
                     "value": "AXI3"
@@ -2047,7 +2047,7 @@
       },
       "axi_mem_intercon_1": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-        "xci_name": "MicroBlaze_HBM_Streams_axi_mem_intercon_1_1",
+        "xci_name": "basic_DMA_setup_axi_mem_intercon_1_0",
         "parameters": {
           "NUM_MI": {
             "value": "1"
@@ -2159,7 +2159,7 @@
             "components": {
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
-                "xci_name": "MicroBlaze_HBM_Streams_auto_pc_2",
+                "xci_name": "basic_DMA_setup_auto_pc_2",
                 "parameters": {
                   "MI_PROTOCOL": {
                     "value": "AXI3"
@@ -2171,16 +2171,16 @@
               }
             },
             "interface_nets": {
-              "auto_pc_to_s00_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_pc/M_AXI"
-                ]
-              },
               "s00_couplers_to_auto_pc": {
                 "interface_ports": [
                   "S_AXI",
                   "auto_pc/S_AXI"
+                ]
+              },
+              "auto_pc_to_s00_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
                 ]
               }
             },
@@ -2201,16 +2201,16 @@
           }
         },
         "interface_nets": {
-          "s00_couplers_to_axi_mem_intercon_1": {
-            "interface_ports": [
-              "M00_AXI",
-              "s00_couplers/M_AXI"
-            ]
-          },
           "axi_mem_intercon_1_to_s00_couplers": {
             "interface_ports": [
               "S00_AXI",
               "s00_couplers/S_AXI"
+            ]
+          },
+          "s00_couplers_to_axi_mem_intercon_1": {
+            "interface_ports": [
+              "M00_AXI",
+              "s00_couplers/M_AXI"
             ]
           }
         },
@@ -2243,38 +2243,20 @@
       },
       "Stream_sink_0": {
         "vlnv": "user.org:user:Stream_sink:1.0",
-        "xci_name": "MicroBlaze_HBM_Streams_Stream_sink_0_0"
+        "xci_name": "basic_DMA_setup_Stream_sink_0_0"
       }
     },
     "interface_nets": {
-      "microblaze_0_ilmb_1": {
-        "interface_ports": [
-          "microblaze_0/ILMB",
-          "microblaze_0_local_memory/ILMB"
-        ]
-      },
       "microblaze_0_axi_periph_M01_AXI": {
         "interface_ports": [
           "microblaze_0_axi_periph/M01_AXI",
           "axi_traffic_gen_0/S_AXI"
         ]
       },
-      "sysclk0_1": {
+      "microblaze_0_M_AXI_DP": {
         "interface_ports": [
-          "sysclk0",
-          "clk_wiz_0/CLK_IN1_D"
-        ]
-      },
-      "microblaze_0_dlmb_1": {
-        "interface_ports": [
-          "microblaze_0/DLMB",
-          "microblaze_0_local_memory/DLMB"
-        ]
-      },
-      "microblaze_0_axi_periph_M00_AXI": {
-        "interface_ports": [
-          "microblaze_0_axi_periph/M00_AXI",
-          "axi_dma_0/S_AXI_LITE"
+          "microblaze_0/M_AXI_DP",
+          "microblaze_0_axi_periph/S00_AXI"
         ]
       },
       "axi_traffic_gen_0_M_AXIS_MASTER": {
@@ -2283,10 +2265,28 @@
           "axi_dma_0/S_AXIS_S2MM"
         ]
       },
-      "microblaze_0_M_AXI_DP": {
+      "microblaze_0_dlmb_1": {
         "interface_ports": [
-          "microblaze_0/M_AXI_DP",
-          "microblaze_0_axi_periph/S00_AXI"
+          "microblaze_0/DLMB",
+          "microblaze_0_local_memory/DLMB"
+        ]
+      },
+      "sysclk0_1": {
+        "interface_ports": [
+          "sysclk0",
+          "clk_wiz_0/CLK_IN1_D"
+        ]
+      },
+      "microblaze_0_axi_periph_M00_AXI": {
+        "interface_ports": [
+          "microblaze_0_axi_periph/M00_AXI",
+          "axi_dma_0/S_AXI_LITE"
+        ]
+      },
+      "microblaze_0_ilmb_1": {
+        "interface_ports": [
+          "microblaze_0/ILMB",
+          "microblaze_0_local_memory/ILMB"
         ]
       },
       "microblaze_0_axi_periph_M02_AXI": {
@@ -2301,18 +2301,6 @@
           "Stream_sink_0/S00_AXIS"
         ]
       },
-      "axi_mem_intercon_1_M00_AXI": {
-        "interface_ports": [
-          "axi_mem_intercon_1/M00_AXI",
-          "hbm_0/SAXI_01"
-        ]
-      },
-      "axi_dma_0_M_AXI_S2MM": {
-        "interface_ports": [
-          "axi_dma_0/M_AXI_S2MM",
-          "axi_mem_intercon_1/S00_AXI"
-        ]
-      },
       "axi_dma_0_M_AXI_MM2S": {
         "interface_ports": [
           "axi_dma_0/M_AXI_MM2S",
@@ -2323,6 +2311,18 @@
         "interface_ports": [
           "axi_mem_intercon/M00_AXI",
           "hbm_0/SAXI_00"
+        ]
+      },
+      "axi_dma_0_M_AXI_S2MM": {
+        "interface_ports": [
+          "axi_dma_0/M_AXI_S2MM",
+          "axi_mem_intercon_1/S00_AXI"
+        ]
+      },
+      "axi_mem_intercon_1_M00_AXI": {
+        "interface_ports": [
+          "axi_mem_intercon_1/M00_AXI",
+          "hbm_0/SAXI_01"
         ]
       }
     },
