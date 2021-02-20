@@ -16,11 +16,6 @@ XILINX_OBJECT = $(VIVADO_BUILD_FOLDER)/exports/$(KERNEL_NAME).xo
 BUILD_DIR := ./xclbin_build
 XCLBIN_OUT = $(BUILD_DIR)/$(KERNEL_NAME).xclbin
 
-# EMAIL SCRIPT
-EMAIL_SCRIPT_FOLDER = ../email_script
-EMAIL_SCRIPT = $(EMAIL_SCRIPT_FOLDER)/email.py
-EMAIL_KEYFILE = $(EMAIL_SCRIPT_FOLDER)/sendgrid.env
-
 # HOST CODE
 HOST_SRCS += ./host_src/host.cpp 
 
@@ -88,7 +83,7 @@ EXECUTABLE = host
 all: $(EXECUTABLE)
 
 .PHONY: build
-build: xclbin email
+build: xclbin 
 # Building kernel
 xclbin: $(XILINX_OBJECT)
 	mkdir -p $(BUILD_DIR)
@@ -101,9 +96,6 @@ xclbin: $(XILINX_OBJECT)
 $(EXECUTABLE): check-xrt $(HOST_SRCS) $(HOST_HDRS)
 	$(CXX) $(CXXFLAGS) $(HOST_SRCS) $(HOST_HDRS) -o '$@' $(LDFLAGS)
 
-.PHONY: email
-email:
-	source $(EMAIL_KEYFILE) && python $(EMAIL_SCRIPT)
 
 # Benchmarking stuff
 benchmark: measure plot

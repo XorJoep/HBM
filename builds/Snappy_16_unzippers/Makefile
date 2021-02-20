@@ -22,7 +22,6 @@ LINKER_CONFIG = $(PWD)/bank_config.ini
 
 # SHARED SCRIPTS CONFIG
 SHARED_SCRIPTS = $(SHARED_DIR)/scripts
-EMAIL_SCRIPT = $(SHARED_SCRIPTS)/email.py
 EMAIL_KEYFILE = $(SHARED_SCRIPTS)/sendgrid.env
 SNAPPY_SCRIPT = $(SHARED_SCRIPTS)/snap.py
 
@@ -100,7 +99,7 @@ LDCLFLAGS += --kernel_frequency 250
 
 # all:
 
-build: xclbin email
+build: xclbin
 
 # Building kernel
 xclbin: $(XCLBIN_OUT)
@@ -120,9 +119,6 @@ $(HOST_OUT): $(HOST_SRCS)
 host-silesia: $(HOST_SILESIA_OUT) 
 $(HOST_SILESIA_OUT): $(HOST_SILESIA_SRCS) 
 	$(CXX) $(CXXFLAGS) $(HOST_SILESIA_SRCS) $(HOST_HDRS) -o $(HOST_SILESIA_OUT) $(LDFLAGS)
-
-email:
-	source $(EMAIL_KEYFILE) && python $(EMAIL_SCRIPT)
 
 silesia: host
 	$(MAKE) -C $(SILESIA_BM_FOLDER) all

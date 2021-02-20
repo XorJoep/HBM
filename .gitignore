@@ -21,33 +21,50 @@ MB\_controller
 *.log
 *.str
 
-###### vivado
-#root
-*_ex/
-questa\_compiled/
-waveforms/
-drivers/
-ip\_repo/
-*.jou
+# ###### vivado
+# #root
+# *_ex/
+# questa\_compiled/
+# waveforms/
+# drivers/
+# ip\_repo/
+# *.jou
 
 
-#inside folder
+# #inside folder
+# .Xil/
+# *.cache
+# *.hw
+# *.ip\_user\_files/
+# *.runs
+# *.sim
+# *.tmp
+# *.xpr
+# *.xsa
+
+# #within .src
+# ip/
+# ipshared/
+# sim/
+# synth/
+# ui/
+# *.xdc
+# *.bmm
+# *.bxml
+
+###### builds
+\_shared\_files/silesia/
+gen\_data/
+xclbin_build
+
+.ipcache/
 .Xil/
-*.cache
-*.hw
-*.ip\_user\_files/
-*.runs
-*.sim
-*.tmp
-*.xpr
-*.xsa
+__pycache__/
 
-#within .src
-ip/
-ipshared/
-sim/
-synth/
-ui/
-*.xdc
-*.bmm
-*.bxml
+host
+
+*.pdf
+*.csv
+*.log
+*.png
+*.env

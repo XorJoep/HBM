@@ -20,8 +20,6 @@ LINKER_CONFIG = $(PWD)/bank_config.ini
 
 # SHARED SCRIPTS CONFIG
 SHARED_SCRIPTS = $(SHARED_DIR)/scripts
-EMAIL_SCRIPT = $(SHARED_SCRIPTS)/email.py
-EMAIL_KEYFILE = $(SHARED_SCRIPTS)/sendgrid.env
 SNAPPY_SCRIPT = $(SHARED_SCRIPTS)/snap.py
 
 # HOST CODE
@@ -89,7 +87,7 @@ EXECUTABLE = host
 all: $(EXECUTABLE)
 
 .PHONY: build
-build: xclbin email
+build: xclbin
 # Building kernel
 xclbin: $(XILINX_OBJECT)
 	mkdir -p $(BUILD_DIR)
@@ -101,10 +99,6 @@ xclbin: $(XILINX_OBJECT)
 # Building Host
 $(EXECUTABLE): check-xrt $(HOST_SRCS) $(HOST_HDRS)
 	$(CXX) $(CXXFLAGS) $(HOST_SRCS) $(HOST_HDRS) -o '$@' $(LDFLAGS)
-
-.PHONY: email
-email:
-	source $(EMAIL_KEYFILE) && python $(EMAIL_SCRIPT)
 
 # Benchmarking stuff
 .PHONY: benchmark
