@@ -18,7 +18,7 @@
 ####################################################
 
 #Put your platform name here!
-set PLATFORM_NAME 	MicroBlaze_HBM_Streams_wrapper3
+set PLATFORM_NAME 	baseline_256_single
 
 proc regenerate_all_BSPs {{name *}} {
   set tmplist [domain list]
