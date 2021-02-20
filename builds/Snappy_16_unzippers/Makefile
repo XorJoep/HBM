@@ -26,7 +26,7 @@ EMAIL_KEYFILE = $(SHARED_SCRIPTS)/sendgrid.env
 SNAPPY_SCRIPT = $(SHARED_SCRIPTS)/snap.py
 
 # HOST CODE
-HOST_DIR = $(PWD)/host
+HOST_DIR = $(PWD)/host_src
 HOST_SRCS += $(HOST_DIR)/host.cpp 
 HOST_OUT = $(HOST_DIR)/host.bin
 HOST_SILESIA_SRCS += $(HOST_DIR)/host-silesia.cpp 

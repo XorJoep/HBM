@@ -53,7 +53,7 @@ MB\_controller
 # *.bxml
 
 ###### builds
-\_shared\_files/silesia/
+silesia
 gen\_data/
 xclbin_build
 
