@@ -10,7 +10,7 @@ This repository contains part of the files used to perform measurements on the H
 * Have access to an Alveo U280 accelerator card.
 * Have Vivado/Vitis/XRT variables set ([link](https://www.xilinx.com/html_docs/xilinx2020_2/vitis_doc/settingupvitisenvironment.html "Setting Up the Vitis Environment"))
 * * On QCE server this is done with: `module load vitis` and `source /opt/xilinx/setup.sh`
-* Make sure the example on ([link](https://github.com/Xilinx/Vitis_Accel_Examples/tree/master/host/hbm_simple "HBM Simple example")) works
+* Make sure [this example](https://github.com/Xilinx/Vitis_Accel_Examples/tree/master/host/hbm_simple "HBM Simple example") works
 
 ## Building the kernel
 * `cd builds`
