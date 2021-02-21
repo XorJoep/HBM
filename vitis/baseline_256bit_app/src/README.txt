@@ -1,1 +1,1 @@
-Empty application. Add your own sources.
+C source files for 256 bit MicroBlaze application.
