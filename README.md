@@ -12,7 +12,7 @@ This repository contains part of the files used to perform measurements on the H
 * * On QCE server this is done with: `module load vitis` and `source /opt/xilinx/setup.sh`
 * Make sure the example on ([link](https://github.com/Xilinx/Vitis_Accel_Examples/tree/master/host/hbm_simple "HBM Simple example")) works
 
-## Building the .xclbin (kernel on FPGA)
+## Building the kernel
 * `cd builds`
 * `make build`
 * This might take 2-3 hours to complete. Once done an .xclbin will be within a folder named `xclbin_build`.
