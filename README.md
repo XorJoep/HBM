@@ -21,8 +21,8 @@ This repository contains part of the files used to perform measurements on the H
 * `cd builds`
 * `make random` or one of the other recipes specified in the makefile
 
-This will execute a `benchmark.sh` from the folder associated with the recipe. Within this file are the configurations for the specific benchmark, such as amount of activated parallel components. This script will use those configurations to repeatingly run the executable build from `host.cpp` by passing those configurations.
-Once the script completes all results from each measurement will be in a `results` folder, the parsed contents of this folder are in a file named `results.csv` which is used to create a plot from the results
+This will execute `benchmark.sh` from the folder associated with the recipe. Within this file are the configurations for the specific benchmark, such as amount of activated parallel components. This script will use those configurations to repeatingly create compressed data and run the executable build from `host.cpp`.
+Once the script completes all results from each measurement will be in a `results` folder, the parsed contents of this folder are in a file named `results.csv` which is used to create a plot from the results.
 
 # Editing the kernel
 To be created
