@@ -10,7 +10,7 @@ help::
 KERNEL_NAME = snappy_16_unzippers
 
 # BUILDING PARAMETERS
-VIVADO_BUILD_FOLDER = /work/jdumont/workspaces/report_workspace/vivado/snappy_16_unzippers/
+VIVADO_BUILD_FOLDER = $(VIVADO_FOLDER)/snappy_16_unzippers/
 DEVICE ?= xilinx_u280_xdma_201920_3
 
 XILINX_OBJECT = $(VIVADO_BUILD_FOLDER)/exports/$(KERNEL_NAME).xo
@@ -57,7 +57,13 @@ GENERATED_DATA_FOLDER = gen_data
 #################################
 
 PWD := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-SHARED_DIR = $(PWD)/../_shared_files
+
+ROOT_FOLDER = $(PWD)/../../
+BUILDS_FOLDER = $(ROOT_FOLDER)/builds
+VIVADO_FOLDER = $(ROOT_FOLDER)/vivado
+VITIS_FOLDER = $(ROOT_FOLDER)/vitis
+SHARED_DIR = $(BUILDS_FOLDER)/_shared_files
+
 COMMON_REPO = $(SHARED_DIR)
 ABS_COMMON_REPO = $(SHARED_DIR)
 

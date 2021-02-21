@@ -5,7 +5,7 @@ help::
 	$(ECHO) "      Command to build xclbin application."
 	$(ECHO) ""
 
-VIVADO_BUILD_FOLDER = /work/jdumont/workspaces/report_workspace/vivado/baseline_256bit
+VIVADO_BUILD_FOLDER = $(VIVADO_FOLDER)/baseline_256bit
 
 KERNEL_NAME = Baseline_256bit
 DEVICE ?= xilinx_u280_xdma_201920_3
@@ -41,7 +41,12 @@ RESULT_FILE_NAME = results.csv
 #################################
 
 PWD := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-SHARED_DIR = $(PWD)/../../_shared_files
+ROOT_FOLDER = $(PWD)/../../../
+
+BUILDS_FOLDER = $(ROOT_FOLDER)/builds
+VIVADO_FOLDER = $(ROOT_FOLDER)/vivado
+VITIS_FOLDER = $(ROOT_FOLDER)/vitis
+SHARED_DIR = $(BUILDS_FOLDER)/_shared_files
 COMMON_REPO = $(SHARED_DIR)
 ABS_COMMON_REPO = $(SHARED_DIR)
 
