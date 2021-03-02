@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>user.org</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>cnt_to_keep</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>cnt_to_keep</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>93338b12</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>cnt_to_keep</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>93338b12</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_testbench</spirit:name>
+        <spirit:displayName>Test Bench</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+        <spirit:modelName>axi_top_tb</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>a91fc574</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>f92e9879</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>cnt</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>dvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>valid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>tlast</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>keep</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sparse_pkt</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+  </spirit:model>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/cnt_to_keep.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_93338b12</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/cnt_to_keep.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_testbench_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/axi_top_tb.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/cnt_to_keep_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_f92e9879</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>cnt_to_keep_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">cnt_to_keep_v1_0</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>cnt_to_keep_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:coreRevision>11</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2020-11-23T21:04:38Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41239fb6_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fd961d4_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f8deaa0_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16961329_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73ef142b_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14ef421e_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6eca325f_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b1c3dbb_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35cb492c_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22cf30fe_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2adfad1_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4073186d_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@aa3356_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24c12ec3_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@350efadc_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d61d36d_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ebf94b8_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56661ff4_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e18e41_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c2d7f7a_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@85dcc5b_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7711133e_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d6d0710_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42195708_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24d06bd3_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dc684e5_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48ee8b24_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3651ec0e_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fdb58ee_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ed35efa_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1739caad_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@148e66ca_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@791fee0b_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41a0729b_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e871307_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33b1a6de_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33de6914_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@392561e5_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30b1a8f8_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@168dee71_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45b86eb1_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e58c1cf_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65ace475_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@191e415b_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bb07450_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6da11db1_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45035c9a_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bf44c8d_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2702526_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70054573_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cc91bb3_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@665ad421_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b2db6bf_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@298d73ad_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60229287_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cb26811_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ea1adff_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bf5c5dd_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f09e303_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@522836a7_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f4f0795_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f5e3371_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@103096c9_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37facdc6_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ed20955_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32fb8647_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@700aa3ed_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a5c40c3_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@575f9600_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62943ae2_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@109f9726_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64c5c307_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bf0e0a7_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23253cdd_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e6d1ac9_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53419f05_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fb13cc4_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23fbcd32_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76d20270_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26af2a41_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f01a58a_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c2f4785_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77860206_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50dd2ef3_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10f7f05f_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62ee6e63_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@261090bb_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6be966f5_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75c90537_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15661a22_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f81fd9d_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ebf7b92_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@314ecd1e_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65f810a4_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@578c86a0_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13b31ae9_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ffdb074_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@336953f9_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10a6ba6_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e212fe7_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@672d5b62_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1101e9ee_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79c7c17f_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c1ad8c_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b099791_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b55a573_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7490fafa_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51c836de_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a042420_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1155ea8f_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3567773_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@aa08971_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@769ebda2_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@285a5382_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51eb8a93_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@109ccaeb_ARCHIVE_LOCATION">/work/jdumont/workspaces/vivado/ip_repo/cnt2keep</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="79912f37"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="132f04d8"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="d3be26a3"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>
