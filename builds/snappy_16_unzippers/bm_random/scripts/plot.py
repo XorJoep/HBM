@@ -38,46 +38,46 @@ markerlist = ['o', '^', 's', 'P', '*', '<', '>', 'p', 'o', '^', 's', 'P', '*', '
 
 ######################################################
 
-title = f"Snappy decompression - random data of size 2$^{2}$$^{7}$ - single vhsnunzip"
-file_name = title.replace(' ', '_').replace('$','') + outputfiletype
+# title = f"Parallel hardware decompressor - 1.0 compression ratio"
+# file_name = title.replace(' ', '_').replace('$','') + outputfiletype
 
-plt.figure(figsize=(6, 4),)
-set_runners = set(num_runners)
-# used_set_runners = sorted([int(x) for x in set_runners if x in range(25)])
-used_set_runners = [1]
-highest_throughputs = []
-for i, n_runners in enumerate(used_set_runners):
-	# if n_runners != 1: break
-	indices = np.where((num_runners==n_runners) & (chunk_size <= chunk_size_limit))
-	line, = plt.plot(chunk_size[indices], throughput[indices], marker=markerlist[i])
-	line.set_label(f'{n_runners}')
-	highest_throughputs.append(max(throughput[indices]))
+# plt.figure(figsize=(6, 4),)
+# set_runners = set(num_runners)
+# # used_set_runners = sorted([int(x) for x in set_runners if x in range(25)])
+# used_set_runners = [1]
+# highest_throughputs = []
+# for i, n_runners in enumerate(used_set_runners):
+# 	# if n_runners != 1: break
+# 	indices = np.where((num_runners==n_runners) & (chunk_size <= chunk_size_limit))
+# 	line, = plt.plot(chunk_size[indices], throughput[indices], marker=markerlist[i])
+# 	line.set_label(f'{n_runners}')
+# 	highest_throughputs.append(max(throughput[indices]))
 
-plt.legend(loc='upper left', fontsize='small', title="N Parallel\nvhsnunzip")
+# plt.legend(loc='upper left', fontsize='small', title="N Parallel\ndecompressor")
 
 
 
-xticks = [x for x in set(chunk_size) if x <= chunk_size_limit]
+# xticks = [x for x in set(chunk_size) if x <= chunk_size_limit]
 
-plt.xticks(xticks)
-plt.grid(True, axis='x')
-highest_throughput = max(highest_throughputs)
+# plt.xticks(xticks)
+# plt.grid(True, axis='x')
+# highest_throughput = max(highest_throughputs)
 
-plt.axhline(y=highest_throughput, color='r', linestyle='-.')
-plt.text(x=21,y=highest_throughput-0.25,s=f"{highest_throughput:.3f} GB/s")
+# plt.axhline(y=highest_throughput, color='r', linestyle='-.')
+# plt.text(x=21,y=highest_throughput-0.25,s=f"{highest_throughput:.3f} GB/s")
 
-plt.title(title)
-plt.xlabel('log$_{2}$' + "(chunk size) [bytes]")
-plt.ylabel("Throughput [GB/s]")
+# plt.title(title)
+# plt.xlabel('log$_{2}$' + "(chunk size) [bytes]")
+# plt.ylabel("Throughput [GB/s]")
 
-plt.savefig(file_name)
+# plt.savefig(file_name)
 
-print(f"wrote to: {file_name}")
+# print(f"wrote to: {file_name}")
 
 ######################################################
 
-title = f"Snappy decompression -  random data of size 2$^{2}$$^{7}$ - parallel vhsnunzip"
-file_name = title.replace(' ', '_').replace('$','') + outputfiletype
+title = f"Parallel hardware decompressor\n1.0 compression ratio - ~128 MB data"
+file_name = title.replace(' ', '_').replace('$','').replace('\n','').replace('~','') + outputfiletype
 
 plt.figure(figsize=(6, 4),)
 set_runners = set(num_runners)
@@ -98,7 +98,7 @@ for i, n_runners in enumerate(used_set_runners):
 		plt.axhline(y=highest_throughput, color='r', linestyle='-.')
 		plt.text(x=21,y=highest_throughput-1.5,s=f"{highest_throughput:.3f} GB/s")
 
-plt.legend(loc='upper left', fontsize='small', title="N Parallel\nvhsnunzip")
+plt.legend(loc='upper left', fontsize='small', title="N Parallel\ndecompressor")
 
 xticks = [x for x in set(chunk_size) if x <= chunk_size_limit]
 

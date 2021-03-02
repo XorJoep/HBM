@@ -35,7 +35,7 @@ file_names = np.array([result_line[-1].strip() for result_line in result_lines])
 
 single_decompress_time = cycles / num_times / freq # = average cycles / freq = time per transaction
 
-total_size = snap_compr_size_bytes + uncompr_size_bytes
+total_size = snap_compr_size_bytes
 total_size_l2 = np.array([int(math.log(x, 2)) for x in total_size])
 
 throughput = total_size / single_decompress_time
@@ -78,8 +78,8 @@ markerlist = ['o', '^', 's', 'P', '*', '<', '>', 'p', 'x', 'D', '|', '1']
 
 ######################################################
 
-title = f"Hardware Snappy decompression\nfiles of size 2$^{2}$$^{7}$ bytes - chunks 2$^{2}$$^{0}$ bytes"
-file_name_out = title.replace(' ', '_').replace('$','').replace('^','').replace('\n','') + outputfiletype
+title = f"Hardware Snappy decompression\nchunks ~1MB - data ~128MB - variable compression ratio "
+file_name_out = title.replace(' ', '_').replace('$','').replace('^','').replace('\n','').replace('~','') + outputfiletype
 
 _, axs = plt.subplots()
 for i, ratio in enumerate(sorted(set(ratios))):
@@ -91,7 +91,7 @@ for i, ratio in enumerate(sorted(set(ratios))):
 		plt.axhline(y=highest_throughput, color='r', linestyle='-.')
 		plt.text(x=0.5,y=highest_throughput-1,s=f"{highest_throughput:.3f} GB/s")
 
-plt.legend(loc='lower right', fontsize='small', title="Ratio of file size uncompressed/compressed", ncol=3)
+plt.legend(loc='upper right', fontsize='small', title="Ratio of file size uncompressed/compressed", ncol=3)
 
 highest_throughput = max(throughput)
 

@@ -10,8 +10,8 @@ if len(sys.argv) != 2:
 
 result_file = sys.argv[1]
 
-title = f"HBM baseline - read+write - 64 bit AXI-bus - Configuration 3"
-file_name = title.replace(' ', '_') + "v2.pdf"
+title = f"HBM baseline - 64 bit AXI-bus - Configuration 3"
+file_name = title.replace(' ', '_') + ".pdf"
 
 freq = 250e6
 
@@ -85,11 +85,6 @@ axs[1].set_xlabel('log$_{2}$' + "(transaction size) [bytes]")
 axs[1].grid(True, axis='x')
 # axs[1].set_title('full')
 # axs[1].set_ylabel("Throughput [GB/s]")
-
-plt.xticks(xticks)
-
-throughput = total_size / single_transaction_time
-throughput /= 1024*1024*1024
 
 fig.suptitle(title)
 plt.xticks(xticks)
