@@ -1,1 +1,1 @@
-Empty application. Add your own sources.
+C source files for MicroBlaze application on 256-bit AXI bus kernel.
