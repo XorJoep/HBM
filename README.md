@@ -1,6 +1,6 @@
 # HBM design files
 This repository contains part of the files used to perform measurements on the High Bandwidth Memory of the Alveo U280. 
-The thesis can be found at the [TU Delft repository](http://resolver.tudelft.nl/uuid:5a3b7590-bca5-46bd-ab4c-842cbe992a41)
+The thesis can be found at the [TU Delft repository](http://resolver.tudelft.nl/uuid:5a3b7590-bca5-46bd-ab4c-842cbe992a41).
 
 
 * `/vitis/` contains source files used to program MicroBlaze used within design
@@ -28,6 +28,8 @@ This will execute `benchmark.sh` from the folder associated with the recipe. Wit
 Once the script completes all results from each measurement will be in a `results` folder, the parsed contents of this folder are in a file named `results.csv` which is used to create a plot from the results.
 
 # Editing the kernel
+Only the 16 decompressors kernel is available for editing.
+
 * Start Vivado and start some project
 * Within Vivado in the tcl console `cd` to `/vivado/snappy_16_unzippers`
 * run `source snappy_16_unzippers.tcl`
