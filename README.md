@@ -6,6 +6,7 @@ The thesis can be found at the [TU Delft repository](http://resolver.tudelft.nl/
 * `/vitis/` contains source files used to program MicroBlaze used within design
 * `/vivado/` contains results of exporting RTL kernel within Vivado
 * `/builds/` contains makefile + other scripts to setup and perform measurements
+* `/ip_repo/` contains IPs used in the designs
 
 # Building and executing a kernel
 ## Requirements
