@@ -25,4 +25,8 @@ This will execute `benchmark.sh` from the folder associated with the recipe. Wit
 Once the script completes all results from each measurement will be in a `results` folder, the parsed contents of this folder are in a file named `results.csv` which is used to create a plot from the results.
 
 # Editing the kernel
-To be created
+* Start Vivado and start some project
+* Within Vivado in the tcl console `cd` to `/vivado/snappy_16_unzippers`
+* run `source snappy_16_unzippers.tcl`
+* This will create a new project with a block design using the 16 decompressors. 
+* Through the `generate RTL kernel` button on the left a `.xo` file will be generated from the `kernel.xml` and `package_kernel.tcl` files.
