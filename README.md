@@ -1,5 +1,7 @@
 # HBM design files
 This repository contains part of the files used to perform measurements on the High Bandwidth Memory of the Alveo U280. 
+The thesis can be found at the [TU Delft repository](http://resolver.tudelft.nl/uuid:5a3b7590-bca5-46bd-ab4c-842cbe992a41)
+
 
 * `/vitis/` contains source files used to program MicroBlaze used within design
 * `/vivado/` contains results of exporting RTL kernel within Vivado
