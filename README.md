@@ -29,4 +29,15 @@ Once the script completes all results from each measurement will be in a `result
 * Within Vivado in the tcl console `cd` to `/vivado/snappy_16_unzippers`
 * run `source snappy_16_unzippers.tcl`
 * This will create a new project with a block design using the 16 decompressors. 
-* Through the `generate RTL kernel` button on the left a `.xo` file will be generated from the `kernel.xml` and `package_kernel.tcl` files.
+* Through the `generate RTL kernel` button on the left a synthesis will be started (if not performed yet) and a `.xo` file will be generated from the `kernel.xml` and `package_kernel.tcl` files.
+
+# Editing the MicroBlaze code
+* Once you have the Vivado block diagram, go to `file->export->export hardware` and click next twice. Make note of where the `.xsa` will be written to.
+* Start Vitis (In Vivado top bar `Tools->Start Vitis IDE`)
+* Within Vitis `File->new->application project`
+* Select the tab `Create a new platform from hardware (XSA)` and select the previously made `.xsa`
+* Give your app a name
+* select empty application after a few nexts
+* Copy the contents of `/vitis/snappy_16_unzippers_app/src` into the src folder of your app.
+* Running build will generate a `.elf`
+* Within Vivado navigate to `Tools->associate ELF Files` and add/select the new `.elf` as a design source.
