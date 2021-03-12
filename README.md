@@ -1,6 +1,9 @@
+# Introduction
+This repository contains part of the files used to perform measurements on the High Bandwidth Memory of the Alveo U280. An implementation is used that allows a processing engine to be used in parallel in combination with a MicroBlaze softcore.  
+This repository is the result of work performed as part of a graduation at the TU Delft of which the thesis can be found at the [TU Delft repository](http://resolver.tudelft.nl/uuid:5a3b7590-bca5-46bd-ab4c-842cbe992a41).  
+<img src="https://raw.githubusercontent.com/XorJoep/HBM/master/hbm-Toplevel.png" width="400" height="400">
+
 # HBM design files
-This repository contains part of the files used to perform measurements on the High Bandwidth Memory of the Alveo U280. 
-The thesis can be found at the [TU Delft repository](http://resolver.tudelft.nl/uuid:5a3b7590-bca5-46bd-ab4c-842cbe992a41).
 
 
 * `/vitis/` contains source files used to program MicroBlaze used within design
